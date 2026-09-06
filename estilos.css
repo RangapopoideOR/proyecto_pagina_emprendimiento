@@ -10,19 +10,27 @@ body{
     font-family: sans-serif;
 }
 h1{
-    font-size: 3em;
+    font-size: 2.76em;
 }
 h2{
-    font-size: 2em;
+    font-size: 1.8em;
 }
 h3{
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 p{
-    font-size: 1.3em;
+    font-size: 0.95em;
 }
 ul{
     list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+a{
+    text-decoration: none;
+}
+.logo{
+    font-size: 1.4em;
 }
 .contenedor{
     max-width: 1200px;
@@ -39,14 +47,14 @@ header{
     flex-direction: column;
 }
 
-.header_top .logo{
+.header_logo{
     display: flex;
 }
 
 .header_top .buscador{
     display: flex;
     justify-content: center;
-    
+    align-items: center;
     background-color: #fff;
     border: 1px solid #333;
     border-radius: 5px;
@@ -58,13 +66,23 @@ header{
     padding: 8px;
 }
 
-.buscador button{
-    width:10%;
-    border: none;
-    border-radius: 5px;
-    background-color: #fff;
-    cursor: pointer;
+.buscador button {
+  width: 10%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.icono_lupa {
+  width: 20px; 
+  height: 20px;
+  display: block; 
+}
+
 /* parte inferior del header */
 .header_bottom{
     display: flex;
@@ -79,8 +97,7 @@ header{
     list-style: none;
     gap: 25px;
     padding-bottom: 15px;
-    padding-left: 0;
-    margin-left: 0;
+    
 }
 .categorias a{
     text-decoration: none;
@@ -96,7 +113,7 @@ header{
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    height: 70vh;
+    height: 50vh;
     color: rgb(255, 255, 255);
     background-image:linear-gradient(
             0deg,
@@ -153,4 +170,86 @@ header{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+}
+
+
+/* pre footer */
+
+.pre-footer{
+    display: block;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px;
+    margin-top: 50px;
+    text-align: center;
+}
+.info-box{
+    flex: 1;
+}
+.info-box h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.info-box p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* contenido final de la pagina */
+footer .contenedor{
+    background-color: #222;
+    color: white;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_logo{
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.footer_contenido{
+    display: block;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    /* padding: 0 50px; */
+    text-align: center;
+}
+.footer_contenido h3{
+    font-size: 0.8em;
+}
+
+.footer_info{
+    padding: 3px 0;
+}
+.footer_info ul{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.footer_info li{
+    font-size: 0.8em;
+    padding: 0 8px;
+}
+
+.footer_info a{
+    color: #4da6ff;
+}
+
+.contactos{
+    display: none;
+}
+.contactos p{
+    font-size: 1em;
+}
+
+
+
+.copyright{
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 9px;
 }
