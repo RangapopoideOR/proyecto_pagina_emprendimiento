@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #fafafa;
+    margin: 0;
+    font-family: sans-serif;
+}
+h1{
+    font-size: 3em;
+}
+h2{
+    font-size: 2em;
+}
+h3{
+    font-size: 1.4em;
+}
+p{
+    font-size: 1.3em;
+}
+ul{
+    list-style: none;
+}
+.contenedor{
+    max-width: 1200px;
+    margin: auto;
+}
+header{
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+/* parte superior del header */
+.header_top{
+    display: flex;
+    flex-direction: column;
+}
+
+.header_top .logo{
+    display: flex;
+}
+
+.header_top .buscador{
+    display: flex;
+    justify-content: center;
+    
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+.buscador input{
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.buscador button{
+    width:10%;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+/* parte inferior del header */
+.header_bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+.categorias ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    gap: 25px;
+    padding-bottom: 15px;
+    padding-left: 0;
+    margin-left: 0;
+}
+.categorias a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 0.85em;
+}
+
+/* estilo del hero */
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 70vh;
+    color: rgb(255, 255, 255);
+    background-image:linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+            ),url("img/ingenieros_promedios.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.promociones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.promociones h2{
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+.promociones .contenedor{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.producto_promo{
+    background: #fff;
+    height: 40vh;
+    width: auto;
+    flex: 1;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5
+}
+/* catlagode productos */
+
+.productos_categorias{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+.productos_categorias h2{
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;   
+}
+.productos_categorias .contenedor{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
