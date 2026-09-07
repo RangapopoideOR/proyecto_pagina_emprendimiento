@@ -138,16 +138,15 @@ header{
     padding-bottom: 5px;
 }
 .promociones .contenedor{
-    width: 100%;
+    overflow: auto;
+    height: 60vh;
+    width:100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2,95%);
+    gap: 10px;
 }
 .producto_promo{
     background: #fff;
-    height: 40vh;
-    width: auto;
-    flex: 1;
     text-align: center;
     border: 1px solid #ddd;
     border-radius: 5
@@ -166,12 +165,36 @@ header{
     padding-bottom: 5px;   
 }
 .productos_categorias .contenedor{
+    overflow: auto;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.producto{
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.producto_info{
+    justify-content: center;
+    text-align: center;
     gap: 20px;
 }
 
+.precio-box{
+    background-color: red;
+}
+.btn_consultar{
+    background-color: #4da6ff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
 
 /* pre footer */
 
