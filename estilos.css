@@ -32,10 +32,7 @@ a{
 .logo{
     font-size: 1.4em;
 }
-.contenedor{
-    max-width: 1200px;
-    margin: auto;
-}
+
 header{
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -45,6 +42,7 @@ header{
 .header_top{
     display: flex;
     flex-direction: column;
+    margin-bottom: 15px;
 }
 
 .header_logo{
@@ -92,7 +90,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
 }
 .categorias ul{
     display: flex;
@@ -100,7 +98,7 @@ header{
     justify-content: space-between;
     list-style: none;
     gap: 25px;
-    padding-bottom: 15px;
+    padding-top: 15px;
     
 }
 .categorias a{
@@ -172,10 +170,11 @@ header{
     overflow: auto;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 10px;
 }
 .producto{
+    height: 70vh;
     background: #fff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -183,16 +182,16 @@ header{
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
+    justify-content: center;
 }
 .producto:hover{
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 .producto-img{
-    height: 20vh;
-    width: 100%;
+    margin: auto;
+    height: 200px;
+    width: 300px;
     background-image: url("img/sombrero.webp");
     background-size: cover;
     background-position: center;
@@ -203,12 +202,12 @@ header{
     text-align: center;
     gap: 20px;
 }
-.producto-info h3 {
-    font-size: 1.1rem;
+.producto_info h3 {
+    font-size: 1.4em;
     margin: 10px 0 5px;
 }
 .descripcion-corta {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #666;
     margin-bottom: 10px;
 }
@@ -216,7 +215,7 @@ header{
     margin-bottom: 15px;
 }
 .precio-actual {
-    font-size: 1.2rem;
+    font-size: 1.3em;
     font-weight: bold;
     color: #28a745;
 }
@@ -251,11 +250,11 @@ header{
 }
 .info-box h3 {
     margin-bottom: 10px;
-    font-size: 1.2rem;
+    font-size: 1.2em;
 }
 
 .info-box p {
-    font-size: 0.95rem;
+    font-size: 0.95em;
     line-height: 1.5;
 }
 
@@ -270,14 +269,14 @@ footer .contenedor{
 
 .footer_logo{
     border-bottom: 1px solid #444;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
 }
 
 .footer_contenido{
     display: block;
     justify-content: space-between;
     margin-bottom: 30px;
-    /* padding: 0 50px; */
+    padding: 0 50px;
     text-align: center;
 }
 .footer_contenido h3{
@@ -315,4 +314,93 @@ footer .contenedor{
     border-top: 1px solid #444;
     padding-top: 10px;
     font-size: 9px;
+}
+
+
+/* vista responsive */
+
+@media (min-width: 720px){
+    /* header vista responsive */
+    header{
+        /* position: fixed;
+        width: 100%; */
+    }
+    .header_top{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header_logo{
+        flex: 1;
+    }
+    .logo{
+        font-size: 2em;
+    }
+
+    header .buscador{
+        display: flex;
+    }
+    .buscador input{
+        width: 400px;
+        padding: 12px 10px;
+    }
+    .buscador button{
+        width: 40px;
+    }
+    .espaciador-header{
+        flex: 1;
+    }
+
+    .categorias a{
+        font-size: 1.1em;
+    }
+
+    /* categoria-producto vista responsive */
+    .productos_categorias .contenedor{
+        display: flex;
+    }
+    .producto { 
+        justify-content: space-between;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* pre-footer vista responsive */
+    .pre-footer{
+        display: flex;
+    }
+
+    /* footer vista responsive */
+
+    .footer_contenido{
+        display: flex;
+    }
+    .footer_logo{
+        text-align: center;
+    }
+    .footer_info{
+        display: block;
+        text-align: left;
+        justify-content: flex-start;
+        padding: 0;
+        margin: 0;
+    }
+    .footer_info ul{
+        flex-direction: column;
+        text-align: left;
+        justify-content: flex-start;
+        gap: 2px;
+    }
+    .footer_info li{
+        padding: 0;
+    }
+    .footer_info h3{
+        font-size: 1.1em;
+    }
+    .footer_info li{
+        font-size: 0.88em;
+    }
+    .copyright{
+        font-size: 0.9em;
+    }
+
 }
