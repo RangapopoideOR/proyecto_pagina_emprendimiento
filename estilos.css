@@ -12,7 +12,7 @@ body{
     font-family: sans-serif;
 }
 h1{
-    font-size: 2.76em;
+    font-size: 2.1em;
 }
 h2{
     font-size: 1.8em;
@@ -69,8 +69,6 @@ header{
 
 .buscador button {
   width: 10%;
-  margin: 0;
-  padding: 0;
   border: none;
   background-color: #fff;
   cursor: pointer;
@@ -78,9 +76,13 @@ header{
   justify-content: center;
   align-items: center;
 }
+/* button:active{
+    filter: brightness(90%);
+} */
 .icono_lupa {
   width: 20px; 
-  height: 20px;
+  height: 30px;
+  padding: auto;
   display: block; 
 }
 
@@ -114,7 +116,7 @@ header{
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    height: 50vh;
+    height: 35vh;
     color: rgb(255, 255, 255);
     background-image:linear-gradient(
             0deg,
@@ -140,13 +142,24 @@ header{
 }
 .promociones .contenedor{
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 .producto_promo{
-    height: 60vh;
+    height: 50vh;
+    width: auto;
     background: #fff;
     text-align: center;
     border: 1px solid #e0e0e0;
-    border-radius: 5
+    border-radius: 5px;
+
+    
+    padding: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .producto_promo:hover{
     transform: translateY(-5px);
@@ -173,7 +186,7 @@ header{
     gap: 10px;
 }
 .producto{
-    height: 70vh;
+    height: 80vh;
     background: #fff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -367,8 +380,20 @@ footer .contenedor{
     .hero{
         height: 80vh;
     }
+    .hero h1{
+        font-size: 2.76em;
+    }
     .hero p{
         font-size: 1.2em;
+    }
+
+    /* promos vista responsive */
+    .promociones .contenedor{
+        flex-direction: row;
+    }
+    .producto_promo{
+        width: 50vw;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     /* categoria-producto vista responsive */
