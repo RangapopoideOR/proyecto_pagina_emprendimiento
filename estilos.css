@@ -140,6 +140,11 @@ header{
     border-bottom: 1px solid #333;
     padding-bottom: 5px;
 }
+.promociones .descripcion-corta{
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
 .promociones .contenedor{
     overflow: auto;
     display: flex;
@@ -253,7 +258,7 @@ header{
     display: block;
     justify-content: space-between;
     gap: 30px;
-    padding: 40px;
+    padding: 70px 40px;
     margin-top: 50px;
     text-align: center;
     background-color: #e9ecef;
