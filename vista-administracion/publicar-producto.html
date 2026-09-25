@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>publicar</title>
+    <link rel="stylesheet" href="publicar-producto.css">
+</head>
+<body>
+    <div class="contenedor">
+
+        <!-- Barra Superior -->
+        <div class="barra_superior">
+            <h2><a href="/vista_configuracion.html">catálogo</a> > publicar</h2>
+        </div>
+        
+        <!-- Panel Izquierdo -->
+        <div class="modulo_contenedor">
+            <div class="logo_cont">
+                <h2 class="logo">[LOGO TIENDA]</h2>
+            </div>
+            
+            <div class="modulos">
+                <ul>
+                    <li class="modulos-principal select">catálogo</li>
+                    <ul class="sub-modulos">
+                        <li>administrar</li>
+                        <li>publicar producto</li>
+                    </ul>
+
+                    <li class="modulos-principal">secciones</li>
+                    <ul class="sub-modulos">
+                        <li>administrar</li>
+                        <li>nueva categoria</li>
+                    </ul>
+
+                    <li class="modulos-principal">ofertas</li>
+                    <ul class="sub-modulos">
+                        <li>administrar</li>
+                        <li>nueva oferta</li>
+                    </ul>
+                </ul>
+            </div>
+
+            <div class="menu_final_cont">
+                <div class="caja caja-principal menu-final">
+                    Administrar pagina
+                </div>
+            </div>
+        </div>
+        
+      
+        <div class="contenido_contenedor">
+            
+           
+            <form class="formulario-principal">
+                
+                <div class="formulario-cont">
+                    
+                    <div class="campo">
+                        <label for="producto">Producto</label>
+                        <input type="text" id="producto" name="producto">
+                    </div>
+
+                    <div class="campo">
+                        <label for="descripcion">Descripción</label>
+                        <input type="text" id="descripcion" name="descripcion">
+                    </div>
+
+                    <div class="campo">
+                        <label for="categoria">Categoría</label>
+                        <input type="text" id="categoria" name="categoria">
+                    </div>
+
+                    <div class="campo">
+                        <label for="precio">Precio</label>
+                        <input type="text" id="precio" name="precio">
+                    </div>
+
+                    <div class="campo">
+                        <label for="seccion">Sección</label>
+                        <input type="text" id="seccion" name="seccion">
+                    </div>
+                </div>
+                
+                <div class="formulario-cont-2">
+                    
+                    <label class="cont-img" for="input-imagen">
+                        <h2 id="texto-imagen">IMAGEN</h2>
+                        <input type="file" id="input-imagen" accept="image/*" style="display: none;">
+                        <img id="vista-previa" src="" alt="Vista previa de producto" style="display: none;">
+                    </label>
+
+                    <div class="boton-cont">
+                        <button type="submit">Publicar</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+        
+    </div>
+
+   
+    <script>
+        const inputImagen = document.getElementById('input-imagen');
+        const vistaPrevia = document.getElementById('vista-previa');
+        const textoImagen = document.getElementById('texto-imagen');
+
+        inputImagen.addEventListener('change', function(evento) {
+            const archivo = evento.target.files[0];
+            if (archivo) {
+                const lector = new FileReader();
+                lector.onload = function(e) {
+                    vistaPrevia.src = e.target.result;
+                    vistaPrevia.style.display = 'block'; 
+                    textoImagen.style.display = 'none';  
+                }
+                lector.readAsDataURL(archivo);
+            }
+        });
+    </script>
+</body>
+</html>

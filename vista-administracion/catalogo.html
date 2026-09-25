@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Catálogo</title>
+    <link rel="stylesheet" href="catalogo.css">
+</head>
+<body>
+    <div class="contenedor">
+
+        <!-- Barra Superior -->
+        <div class="barra_superior">
+            <h2>catálogo</h2>
+        </div>
+        
+        <!-- Panel Izquierdo -->
+        <div class="modulo_contenedor">
+            <div class="logo_cont">
+                <h2 class="logo">[LOGO TIENDA]</h2>
+            </div>
+            
+            <div class="modulos">
+                <ul>
+                    <li class="modulos-principal select">catálogo</li>
+                    <ul class="sub-modulos">
+                        <li>administrar</li>
+                        <li>publicar producto</li>
+                    </ul>
+
+                    <li class="modulos-principal">secciones</li>
+                    <ul class="sub-modulos">
+                        <li>administrar</li>
+                        <li>nueva categoria</li>
+                    </ul>
+
+                    <li class="modulos-principal">ofertas</li>
+                    <ul class="sub-modulos">
+                        <li>administrar</li>
+                        <li>nueva oferta</li>
+                    </ul>
+                </ul>
+            </div>
+
+            <div class="menu_final_cont">
+                <div class="caja caja-principal menu-final">
+                    Administrar página
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contenido Principal -->
+        <div class="contenido_contenedor">
+
+            <div class="barra-acciones">
+                <h3>Artículos publicados: 4</h3>
+                <div style="display: flex; align-items: center;gap: 10px;">
+                    <div>
+                        <a href="/publicar-producto.html" class="btn-publicar">Publicar</a>
+                    </div>
+                    <div class="buscador">
+                        <input type="text" id="buscador" placeholder="buscar artículo...">
+                    </div>
+                </div>
+            </div>
+            
+            <!--DISEÑO TIPO PANEL -->
+            <div class="panel-contenedor">
+                
+                
+                <div class="tarjeta-producto">
+                    <div class="tarjeta-header">
+                        <span class="badge-id">ID: 0102</span>
+                        <span class="badge-categoria">Rones</span>
+                    </div>
+                    <div class="tarjeta-body">
+                        <h3 class="nombre-producto">Cacique</h3>
+                        <p class="precio-producto">$12</p>
+                    </div>
+                    <div class="tarjeta-footer">
+                        <a href="#" class="btn-detalles" onclick="abrirModal(event)">Ver detalles</a>
+                    </div>
+                </div>
+
+                
+                <div class="tarjeta-producto">
+                    <div class="tarjeta-header">
+                        <span class="badge-id">ID: 0103</span>
+                        <span class="badge-categoria">Rones</span>
+                    </div>
+                    <div class="tarjeta-body">
+                        <h3 class="nombre-producto">Santa Teresa</h3>
+                        <p class="precio-producto">$15</p>
+                    </div>
+                    <div class="tarjeta-footer">
+                        <a href="#" class="btn-detalles" onclick="abrirModal(event)">Ver detalles</a>
+                    </div>
+                </div>
+
+            
+                <div class="tarjeta-producto">
+                    <div class="tarjeta-header">
+                        <span class="badge-id">ID: 0104</span>
+                        <span class="badge-categoria">Rones</span>
+                    </div>
+                    <div class="tarjeta-body">
+                        <h3 class="nombre-producto">Pampero</h3>
+                        <p class="precio-producto">$11</p>
+                    </div>
+                    <div class="tarjeta-footer">
+                        <a href="#" class="btn-detalles" onclick="abrirModal(event)">Ver detalles</a>
+                    </div>
+                </div>
+
+            
+                <div class="tarjeta-producto">
+                    <div class="tarjeta-header">
+                        <span class="badge-id">ID: 0105</span>
+                        <span class="badge-categoria">Rones</span>
+                    </div>
+                    <div class="tarjeta-body">
+                        <h3 class="nombre-producto">Diplomático</h3>
+                        <p class="precio-producto">$30</p>
+                    </div>
+                    <div class="tarjeta-footer">
+                        <a href="#" class="btn-detalles" onclick="abrirModal(event)">Ver detalles</a>
+                    </div>
+                </div>
+
+            </div> 
+        </div>
+        
+    </div>
+
+    <div id="modal-producto" class="modal-cont" style="display: none;">
+        
+        <!-- Contenedor principal del Modal -->
+        <div class="modal-contenido">
+            
+            <!-- Botón para cerrar-->
+            <span class="btn-cerrar" onclick="cerrarModal()">&times;</span>
+
+          
+            <div class="modal-cuerpo">
+               
+                <div class="modal-img">
+                    <h2>IMAGEN</h2>
+                </div>
+
+                
+                <div class="modal-detalles">
+                    <div class="detalles-texto">
+                        <h1 class="titulo-articulo">Ron Cacique Añejo</h1>
+                        <p class="descripcion-corta">Caja-12 unidades.</p>
+                        <p class="precio-destacado">$12.00</p>
+                        <span class="categoria-des">Categoría: Rones</span>
+                    </div>
+                    
+                    <div>
+                        <a href="#" class="btn-modificar">Modificar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+    const modal = document.getElementById("modal-producto");
+
+    // Función para mostrar el modal
+    function abrirModal(evento) {
+        evento.preventDefault(); // Evita que la página salte al inicio por el href="#"
+        modal.style.display = "flex";
+    }
+
+    // Función para ocultar el modal
+    function cerrarModal() {
+        modal.style.display = "none";
+    }
+
+    // Permite cerrar el modal haciendo clic en el fondo oscuro
+    window.onclick = function(evento) {
+        if (evento.target === modal) {
+            cerrarModal();
+        }
+    }
+</script>
+</body>
+</html>
