@@ -12,6 +12,11 @@ body{
     padding: 0;
 }
 
+:root{
+    --color-principal: #34d572;
+    --color-segundario: #30b162;
+}
+
 .contenedor{
     display: grid;
     grid-template-columns: 15vw auto;
