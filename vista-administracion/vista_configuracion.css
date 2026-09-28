@@ -13,8 +13,12 @@ body{
 }
 
 :root{
-    --color-principal: #34d572;
-    --color-segundario: #30b162;
+    --color-principal: #3b6b9a;
+    --color-textos: #1a2b4c;
+    --color-ambar: #cda250;
+    --acento-secundarios: #2a4c6a;
+    --acento-calido: #9a6a3a;
+    --fondo: #f4f6f9;
 }
 
 .contenedor{
@@ -25,6 +29,31 @@ body{
     width: 100vw;
 }
 
+/* barra superior del sistema de administracion */
+.barra_superior {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    box-shadow: 0 1px 4px #afafaf;
+    background-color: #ffffff;
+    z-index: 10;
+    display: flex;
+    align-items: center; 
+}
+
+.barra_superior h2{
+    padding-left: 10px;
+    font-size: 1.6em;
+    color: var(--color-textos);
+    cursor: pointer;
+}
+.barra_superior a{
+    color: var(--color-textos);
+}
+.barra_superior a:hover{
+    color: var(--color-principal);
+}
+
+/* contenedor de los modulos de administracion */
 .modulo_contenedor {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
@@ -33,37 +62,9 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 30px 0 20px 0;
+    padding: 30px 0 0 0;
     overflow: auto;
     z-index: 10;
-}
-
-.barra_superior {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    box-shadow: 0 1px 4px #afafaf;
-    background-color: #ffffff;
-    z-index: 10; 
-}
-
-.barra_superior h2{
-    padding-left: 10px;
-    font-size: 1.6em;
-    color: #3b6b9a;
-    cursor: pointer;
-}
-
-
-.contenido_contenedor {
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
-    background-color: #fcfcfc; 
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: calc(8vh + 40px);
 }
 
 .logo_cont {
@@ -71,7 +72,7 @@ body{
 }
 
 .logo {
-    color: #2a4c6a;
+    color: var(--color-principal);
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -83,13 +84,13 @@ body{
     justify-content: space-between;
 }
 
-.select{
-    color: #3b6b9a;
-    background-color: #f0f4f8;
-}
 .modulos ul{
     margin: 5PX 0;
     padding-left: 0;
+}
+.select{
+    color: #fff;
+    background-color: var(--color-principal);
 }
 .sub-modulos{
     display: none;
@@ -97,32 +98,29 @@ body{
 .modulos li{
     padding: 10PX;
     margin: 10px;
-    border: solid 1px #3b6b9a;
+    border: solid 1px var(--color-principal);
     cursor: pointer;
     border-radius: 4px; 
 }
 
-.modulos li:hover{
-    color: #3b6b9a;
+.modulo:hover{
+    color: var(--color-principal);
     background-color: #f0f4f8;
 }
 
-.caja {
-    border: 1px solid #3b6b9a;
-    padding: 1.5vh 10px;
-    color: #222;
-    font-size: 0.95rem;
+/* contenedor del contenido principal */
+.contenido_contenedor {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    background-color: var(--fondo); 
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: calc(8vh + 40px);
 }
 
-.caja-principal {
-    margin: 0 10px; 
-}
-
-.menu-final {
-    margin: 0 10px;
-    cursor: pointer;
-    border-radius: 4px;
-}
 
 /* contenido modulo seleccionado */
 
@@ -135,8 +133,12 @@ body{
     padding: 0 30px; 
 }
 
+.barra-acciones h3{
+    color: var(--color-textos);
+}
+
 .btn-publicar{
-    background-color: #3b6b9a;
+    background-color: var(--color-principal);
     color: white;
     padding: 10px 25px;
     border-radius: 6px;
@@ -145,7 +147,7 @@ body{
     transition: background-color 0.2s, transform 0.2s;
 }
 .btn-publicar:hover{
-    background-color: #2a4c6a;
+    background-color: var(--acento-secundarios);
 }
 
 .buscador {
@@ -167,10 +169,10 @@ body{
 
 .buscador input:focus {
     outline: none;
-    border-color: #3b6b9a;
+    border-color: var(--color-principal);
     
 }
-
+/* deiseño del panel contenedor de los productos */
 
 
 .panel-contenedor {
@@ -185,7 +187,7 @@ body{
 
 .tarjeta-producto {
     background-color: #ffffff;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
     padding: 15px 25px;
     display: flex;
@@ -216,8 +218,8 @@ body{
 }
 
 .badge-categoria {
-    background-color: #eef4fa;
-    color: #3b6b9a;
+    background-color: var(--color-ambar);
+    color: #fff;
     padding: 4px 10px;
     border-radius: 12px;
     font-weight: 600;
@@ -237,14 +239,14 @@ body{
 
 .nombre-producto {
     margin: 0;
-    color: #333;
+    color: var(--color-textos);
     font-size: 1.25em;
     width: 40%; 
 }
 
 .precio-producto {
     margin: 0;
-    color: #2a4c6a;
+    color: var(--color-textos);
     font-size: 1.4em;
     font-weight: bold;
 }
@@ -257,8 +259,8 @@ body{
 }
 
 .btn-detalles {
-    background-color: #3b6b9a;
-    color: white;
+    background-color: var(--color-principal);
+    color: #fff;
     padding: 10px 25px;
     border-radius: 6px;
     font-size: 0.95em;
@@ -267,7 +269,7 @@ body{
 }
 
 .btn-detalles:hover {
-    background-color: #2a4c6a;
+    background-color: var(--acento-secundarios);
 }
 
 
@@ -309,7 +311,7 @@ body{
     top: 15px;
     right: 25px;
     font-size: 2em;
-    color: #888;
+    color: #94a3b8;
     cursor: pointer;
     font-weight: bold;
     transition: color 0.2s;
@@ -332,13 +334,13 @@ body{
 .modal-img {
     width: 50%;
     height: 90%;
-    border: 3px dashed #3b6b9a; 
+    border: 3px dashed var(--color-principal); 
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2.5em;
-    color: #3b6b9a;
+    color: var(--color-principal);
     background-color: #f4f7fb;
 }
 
@@ -362,7 +364,7 @@ body{
     font-weight: bold;
     font-size: 2em;
     margin: 0;
-    color: #222;
+    color: var(--color-textos);
 }
 
 .descripcion-corta {
@@ -374,15 +376,15 @@ body{
 .precio-destacado {
     font-weight: bold;
     font-size: 1.8em;
-    color: #2a4c6a;
+    color: var(--color-textos);
     margin: 0;
 }
 
 .categoria-des {
     font-size: 0.9em;
     font-weight: 600;
-    color: #3b6b9a;
-    background-color: #eef4fa;
+    color: #fff;
+    background-color: var(--color-ambar);
     padding: 6px 12px;
     border-radius: 8px;
     width: fit-content;
@@ -391,7 +393,7 @@ body{
 .btn-modificar {
     display: block;
     text-align: center;
-    background-color: rgb(77, 166, 255);
+    background-color: #4a7fa1;
     color: white;
     font-weight: bold;
     font-size: 16px;

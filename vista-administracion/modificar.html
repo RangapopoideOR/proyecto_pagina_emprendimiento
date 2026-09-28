@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>publicar producto</title>
+    <title>modificar produto</title>
     <link rel="stylesheet" href="catalago-acciones.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
 
         <!-- Barra Superior -->
         <div class="barra_superior">
-            <h2><a href="/vista-administracion/vista_configuracion.html">catálogo</a> > publicar</h2>
+            <h2><a href="/vista-administracion/vista_configuracion.html">catálogo</a> > modificar</h2>
         </div>
         
         <!-- Panel Izquierdo -->
@@ -57,24 +57,24 @@
                     
                     <div class="campo">
                         <label for="producto">Producto</label>
-                        <input type="text" id="producto" name="producto">
+                        <input value="cacique" type="text" id="producto" name="producto">
                     </div>
 
                     <div class="campo">
                         <label for="descripcion">Descripción</label>
-                        <input type="text" id="descripcion" name="descripcion">
+                        <input value="caja - 12 unidades" type="text" id="descripcion" name="descripcion">
                     </div>
-
+    
                     <div class="campo">
                         <label for="precio">Precio</label>
-                        <input type="text" id="precio" name="precio">
+                        <input value="12" type="text" id="precio" name="precio">
                     </div>
 
                     <div class="campo">
                         <label for="categoria">Categoría</label>
                         <select id="categoria" name="categoria">
-                            <option value="" disabled selected>Seleccione una categoría...</option>
-                            <option value="rones">Rones</option>
+                            <option value=""disabled>Seleccione una categoría...</option>
+                            <option value="rones"selected>Rones</option>
                             <option value="cervezas">Cervezas</option>
                             <option value="vinos">Vinos</option>
                             <option value="licores">Licores</option>
@@ -84,12 +84,13 @@
                     <div class="campo">
                         <label for="seccion">Sección</label>
                         <select id="seccion" name="seccion">
-                            <option value="" disabled selected>Seleccione una sección...</option>
-                            <option value="nacionales">Nacionales</option>
+                            <option value=""disabled>Seleccione una sección...</option>
+                            <option value="nacionales"selected>Nacionales</option>
                             <option value="importados">Importados</option>
                             <option value="ofertas">Ofertas Especiales</option>
                         </select>
                     </div>
+
                 </div>
                 
                 <div class="formulario-cont-2">
@@ -101,7 +102,7 @@
                     </label>
 
                     <div class="boton-cont">
-                        <button type="submit">Publicar</button>
+                        <button type="submit">Modificar</button>
                     </div>
                 </div>
 

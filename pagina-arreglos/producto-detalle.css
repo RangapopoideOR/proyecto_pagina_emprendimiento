@@ -1,0 +1,133 @@
+:root{
+    --color-principal: #3b6b9a;
+    --color-textos: #1a2b4c;
+    --color-ambar: #cda250;
+    --acento-secundarios: #2a4c6a;
+    --acento-calido: #9a6a3a;
+    --fondo: #f4f6f9;
+}
+main {
+    width: 100%;
+}
+
+.barra-navegacion{
+    width: 100%;
+    padding: 5px 10px;
+}
+.barra-navegacion ul{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.barra-navegacion li{
+    color: var(--color-textos);
+    font-size: 0.86em;
+}
+.barra-navegacion a{
+    color: var(--color-principal);
+}
+.barra-navegacion a:hover{
+    color: var(--color-textos);
+}
+
+.cont-producto-detalles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: auto;
+    width: 100%;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.producto-img{
+    min-width: 50%;
+    max-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 0 2px #cfcfcf;
+    border-radius: 10px;
+}
+.producto-img img{
+    border-radius: 10px;
+    width: 95%;
+    height: 95%;
+    object-fit: fill;
+}
+
+
+.producto-detalles {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.detalles-texto {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+}
+
+.badge-id {
+    color: #888;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.titulo-articulo {
+    font-weight: bold;
+    font-size: 2em;
+    margin: 0;
+    color: var(--color-textos);
+    text-transform: capitalize;
+}
+
+.descripcion-corta {
+    font-size: 1.1em;
+    color: #555;
+    margin: 0;
+}
+
+.precio-destacado {
+    font-weight: bold;
+    font-size: 1.8em;
+    color: var(--color-textos);
+    margin: 0;
+}
+
+.categoria-des {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--color-ambar);
+    padding: 6px 12px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.cont-btn-consultar{
+    padding: 20px;
+}
+
+.btn-consultar {
+    background-color: #4a7fa1;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px;
+    margin: 0;
+    border-radius: 8px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-consultar:hover {
+    background-color: rgb(51, 136, 230);
+    transform: translateY(-2px);
+}

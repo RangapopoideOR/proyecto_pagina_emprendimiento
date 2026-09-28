@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrar Catálogo</title>
-    <link rel="stylesheet" href="catalogo.css">
+    <link rel="stylesheet" href="vista_configuracion.css">
 </head>
 <body>
     <div class="contenedor">
@@ -22,41 +22,39 @@
             
             <div class="modulos">
                 <ul>
-                    <li class="modulos-principal select">catálogo</li>
+                    <li class="select">catálogo</li>
                     <ul class="sub-modulos">
                         <li>administrar</li>
                         <li>publicar producto</li>
                     </ul>
 
-                    <li class="modulos-principal">secciones</li>
+                    <li class="modulo">secciones</li>
                     <ul class="sub-modulos">
                         <li>administrar</li>
                         <li>nueva categoria</li>
                     </ul>
 
-                    <li class="modulos-principal">ofertas</li>
+                    <li class="modulo">ofertas</li>
                     <ul class="sub-modulos">
                         <li>administrar</li>
                         <li>nueva oferta</li>
                     </ul>
                 </ul>
+                <ul>
+                    <li class="modulo">Administrar pagina</li>
+                </ul>
             </div>
 
-            <div class="menu_final_cont">
-                <div class="caja caja-principal menu-final">
-                    Administrar página
-                </div>
-            </div>
         </div>
         
         <!-- Contenido Principal -->
         <div class="contenido_contenedor">
 
             <div class="barra-acciones">
-                <h3>Artículos publicados: 4</h3>
+                <h3>Productos publicados: 4</h3>
                 <div style="display: flex; align-items: center;gap: 10px;">
                     <div>
-                        <a href="publicar-producto.html" class="btn-publicar">Publicar</a>
+                        <a href="/vista-administracion/publicar-producto.html" class="btn-publicar">+ Publicar</a>
                     </div>
                     <div class="buscador">
                         <input type="text" id="buscador" placeholder="buscar artículo...">
@@ -150,6 +148,7 @@
                 
                 <div class="modal-detalles">
                     <div class="detalles-texto">
+                        <span class="badge-id">ID: 0105</span>  
                         <h1 class="titulo-articulo">Ron Cacique Añejo</h1>
                         <p class="descripcion-corta">Caja-12 unidades.</p>
                         <p class="precio-destacado">$12.00</p>
@@ -157,7 +156,7 @@
                     </div>
                     
                     <div>
-                        <a href="#" class="btn-modificar">Modificar</a>
+                        <a href="/vista-administracion/modificar.html" class="btn-modificar">Modificar</a>
                     </div>
                 </div>
             </div>
@@ -171,7 +170,7 @@
 
     // Función para mostrar el modal
     function abrirModal(evento) {
-        evento.preventDefault();
+        evento.preventDefault(); // Evita que la página salte al inicio por el href="#"
         modal.style.display = "flex";
     }
 
@@ -180,7 +179,7 @@
         modal.style.display = "none";
     }
 
-    
+    // Permite cerrar el modal haciendo clic en el fondo oscuro
     window.onclick = function(evento) {
         if (evento.target === modal) {
             cerrarModal();
