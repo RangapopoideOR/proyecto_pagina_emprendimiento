@@ -76,6 +76,10 @@ header{
     box-shadow: 0 0 5px #afafaf
 }
 
+main{
+    width: 100%;
+}
+
 
 /* categorias diseño*/
 
