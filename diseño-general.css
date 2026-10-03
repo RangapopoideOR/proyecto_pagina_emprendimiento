@@ -1,3 +1,13 @@
+:root {
+    --color-principal: #3b6b9a;
+    --color-principal-hover: rgb(51, 136, 230);
+    --color-textos: #1a2b4c;
+    --color-textos-secundarios: #555;
+    --color-ambar: #cda250;
+    --acento-secundarios: #2a4c6a;
+    --acento-calido: #9a6a3a;
+    --fondo: #f4f6f9;
+}
 
 *{
     box-sizing: border-box;
@@ -54,7 +64,7 @@ header{
 }
 .logo {
     font-size: 1.5em;
-    color: #3b6b9a;
+    color: var(--color-principal);
     font-weight: 300;
 }
 
@@ -63,13 +73,13 @@ header{
 }
 .cont-buscador input{
     width: 300px;
-    height:     40px;
+    height: 40px;
     font-size: 1em;
     font-weight: 500;
     padding: 10px 10px;
     border: none;
     border-radius: 5px;
-    box-shadow: 0 0 2px  #afafaf;
+    box-shadow: 0 0 2px #afafaf;
 }
 .cont-buscador input:focus{
     outline: none;
@@ -82,8 +92,6 @@ main{
 
 
 /* categorias diseño*/
-
-
 .categorias{
     display: flex;
     align-items: center;
@@ -93,10 +101,10 @@ main{
 .categorias a{
     border-radius: 2px;
     padding: 15px 25px;
-    color: #555;
+    color: var(--color-textos-secundarios);
 }
 .categorias a:hover{
-    color: #3b6b9a;
+    color: var(--color-principal);
 }
 
 /* pre footer */
@@ -192,7 +200,7 @@ footer .contenedor{
     padding-top: 3px;
     margin-bottom: 12px;
     font-size: 0.8em;
-    color: rgb(156 163 175 / var(--tw-text-opacity, 1));;
+    color: rgb(156 163 175);
     font-weight: bold;
 }
 

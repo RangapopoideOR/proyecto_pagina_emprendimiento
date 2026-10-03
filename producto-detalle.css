@@ -1,12 +1,3 @@
-:root{
-    --color-principal: #3b6b9a;
-    --color-textos: #1a2b4c;
-    --color-ambar: #cda250;
-    --acento-secundarios: #2a4c6a;
-    --acento-calido: #9a6a3a;
-    --fondo: #f4f6f9;
-}
-
 .barra-navegacion{
     width: 100%;
     padding: 5px 10px;
@@ -38,7 +29,7 @@
     padding: 0 20px;
 }
 
-.producto-img{
+.img-vista-detalle{
     min-width: 50%;
     max-height: 600px;
     display: flex;
@@ -48,11 +39,11 @@
     box-shadow: 0 0 2px #cfcfcf;
     border-radius: 10px;
 }
-.producto-img img{
+.img-vista-detalle img{
     border-radius: 10px;
     width: 95%;
     height: 95%;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 
@@ -88,7 +79,7 @@
 
 .descripcion-corta {
     font-size: 1.1em;
-    color: #555;
+    color: var(--color-textos-secundarios);
     margin: 0;
 }
 
@@ -114,17 +105,16 @@
 }
 
 .btn-consultar {
-    background-color: #4a7fa1;
+    background-color: var(--color-principal);
     color: white;
     font-weight: bold;
     font-size: 16px;
     padding: 15px;
-    margin: 0;
     border-radius: 8px;
     transition: background-color 0.2s, transform 0.2s;
 }
 
 .btn-consultar:hover {
-    background-color: rgb(51, 136, 230);
+    background-color: var(--color-principal-hover);
     transform: translateY(-2px);
 }
