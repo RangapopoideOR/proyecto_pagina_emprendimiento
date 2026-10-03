@@ -3,161 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto pagina de ventas online</title>
+    <title>tienda online emprendimieto</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-
-    <!-- encabezado de la pagina -->
     <header>
-        <div class="contenedor">
-
-            <div class="header_top">
-                <div class="header_logo">
-                    <p class="logo">LOGO</p>
-                </div>
-                
-                <div class="buscador">
-                    <input type="text" id="buscador" placeholder="buscar producto...">
-                    <button>
-                        <svg class="icono_lupa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                            <!-- El lente de la lupa -->
-                            <circle cx="11" cy="11" r="8" />
-                            
-                            <!-- El mango de la lupa -->
-                            <line x1="16.5" y1="16.5" x2="22" y2="22" />
-                        </svg>
-                    </button>
-                </div>
-
-                <div class="espaciador-header">
-
-                </div>
-
+        <div class="header-cont">
+            <div class="cont-logo">
+                <a href="#" class="logo">[LOGO]</a>
             </div>
-            
-            <div class="header_bottom">
-                <nav class="categorias">
-                    <ul>
-                        <li><a href="#">categoria 1</a></li>
-                        <li><a href="#">categoria 2</a></li>
-                        <li><a href="#">categoria 3</a></li>
-                        <li><a href="#">categoria 4</a></li>
-                    </ul>
-                </nav>
+            <div class="cont-buscador">
+                <input placeholder="Buscar" type="text">
             </div>
-
+            <nav>
+                <ul class="categorias">
+                    <li><a href="#">categoria 1</a></li>
+                    <li><a href="#">categoria 2</a></li>
+                    <li><a href="#">categoria 3</a></li>
+                    <li><a href="#">categoria 4</a></li>
+                    <li><a href="#">categoria 5</a></li>
+                </ul>
+            </nav>
         </div>
-
     </header>
 
+
     <main>
-
-        <!-- el hero, lo primero que se en la pagina  -->
-
         <section class="hero">
-            <h1>Descubre nuestro catálogo</h1>
-            <p>La mejor calidad a tu disposición.</p>
-        </section>
-
-        <!-- zona de promociones que muestra los productos en ofertas y las promos del negocio -->
-
-        <section class="promociones">
-            <h2>¡Ofertas y Destacados!</h2>
-            <div class="contenedor">
-
-                <div class="producto_promo">
-                    <h3>productos en promocion</h3>
-                    <div>
-                        <p class="descripcion-corta">descripcion.</p>
-                        <div>
-                            <a href="#" class="btn_consultar" target="_blank">consultar disponibilidad</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="producto_promo">
-                    <h3>productos en promocion</h3>
-                    <div>
-                        <p class="descripcion-corta">descripcion.</p>
-                        <div>
-                            <a href="#" class="btn_consultar" target="_blank">consultar disponibilidad</a>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </section>
-
-        <!-- agrupacion de los mejores productos de las categorias mas vistas -->
-
-        <section class="productos_categorias">
-
-            <h2>mejor categoria 1</h2>
-
-            <div class="contenedor">
-
-                <div class="producto">
-                    
-                    <div class="producto-img">
-                        
-                    </div>
-
-                    <div class="producto_info">
-                        <h3>SOMBRERO PELO DE GUAMA</h3>
-                        <p class="descripcion-corta">Sombrero llanero clasico de coleccion.</p>
-                        <div class="precio-box">
-                            <span class="precio-actual">$65.00</span>
-                        </div>
-                        <div>
-                            <a href="#" class="btn_consultar" target="_blank">Consultar Disponibilidad</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="producto">
-                    
-                    <div class="producto-img">
-                        
-                    </div>
-
-                    <div class="producto_info">
-                        <h3>SOMBRERO PELO DE GUAMA</h3>
-                        <p class="descripcion-corta">Sombrero llanero clasico de coleccion.</p>
-                        <div class="precio-box">
-                            <span class="precio-actual">$65.00</span>
-                        </div>
-                        <div>
-                            <a href="#" class="btn_consultar" target="_blank">Consultar Disponibilidad</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="producto">
-                    
-                    <div class="producto-img">
-                        
-                    </div>
-
-                    <div class="producto_info">
-                        <h3>SOMBRERO PELO DE GUAMA</h3>
-                        <p class="descripcion-corta">Sombrero llanero clasico de coleccion.</p>
-                        <div class="precio-box">
-                            <span class="precio-actual">$65.00</span>
-                        </div>
-                        <div>
-                            <a href="#" class="btn_consultar" target="_blank">Consultar Disponibilidad</a>
-                        </div>
-                    </div>
-
-                </div>
+            <div class="img-hero">
 
             </div>
-            
         </section>
 
-        <!-- pre_footer, info antes de llegar al footer para dar informacion al usuario -->
+        <section>
+            <div class="contenido-seccion">
+                <div class="seccion-titulo">
+                    <h2>mejor categoria 1</h2>
+                </div>
+
+                <div class="carrusel-productos">
+
+                    <button class="btn-scroll left" id="btn-left">❮</button>
+
+                    <div class="cont-productos" id="cont-productos">
+
+                        <a href="producto-detalle.html" class="producto">
+                            <div class="producto-img">
+                                <img src="/img/sombrero-luffy.jpeg" alt="">
+                            </div>
+    
+                            <div class="producto_info">
+                                <h3>sombrero pelo de guama</h3>
+    
+                                <p class="descripcion-corta">Sombrero llanero clasico de coleccion.</p>
+                                
+                                <div class="precio">
+                                    <span class="precio-actual">$65.00</span>                            
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="producto-detalle.html" class="producto">
+                            <div class="producto-img">
+                                <img src="/img/sombrero-luffy.jpeg" alt="">
+                            </div>
+    
+                            <div class="producto_info">
+                                <h3>sombrero pelo de guama</h3>
+    
+                                <p class="descripcion-corta">Sombrero llanero clasico de coleccion.</p>
+                                
+                                <div class="precio">
+                                    <span class="precio-actual">$65.00</span>                            
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="producto-detalle.html" class="producto">
+                            <div class="producto-img">
+                                <img src="/img/sombrero-luffy.jpeg" alt="">
+                            </div>
+    
+                            <div class="producto_info">
+                                <h3>sombrero pelo de guama</h3>
+    
+                                <p class="descripcion-corta">Sombrero llanero clasico de coleccion.</p>
+                                
+                                <div class="precio">
+                                    <span class="precio-actual">$65.00</span>                            
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="producto-detalle.html" class="producto">
+                            <div class="producto-img">
+                                <img src="/img/sombrero-luffy.jpeg" alt="">
+                            </div>
+    
+                            <div class="producto_info">
+                                <h3>sombrero pelo de guama</h3>
+    
+                                <p class="descripcion-corta">Sombrero llanero clasico de coleccion.</p>
+                                
+                                <div class="precio">
+                                    <span class="precio-actual">$65.00</span>                            
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="producto-detalle.html" class="producto">
+                            <div class="producto-img">
+                                <img src="/img/sombrero-luffy.jpeg" alt="">
+                            </div>
+    
+                            <div class="producto_info">
+                                <h3>sombrero pelo de guama</h3>
+    
+                                <p class="descripcion-corta">Sombrero llanero clasico de coleccion.</p>
+                                
+                                <div class="precio">
+                                    <span class="precio-actual">$65.00</span>                            
+                                </div>
+                            </div>
+                        </a>
+                        
+                    </div>
+
+                    <button class="btn-scroll right" id="btn-right">❯</button>
+
+                </div>
+
+
+            </div>
+        </section>
 
         <section class="pre-footer">
 
@@ -177,20 +155,15 @@
             </div>
 
         </section>
-
-
     </main>
 
     <footer>
-
         <div class="contenedor">
-
             <div class="footer_logo">
                 <p class="logo">LOGO</p>
             </div>
             
-            <div class="footer_contenido">
-                
+            <div class="footer_contenido">      
                 <div class="footer_info contactos">
                     <h3>Contactos</h3>
                     <p>Email: tienda@gmail.com</p>
@@ -201,7 +174,7 @@
                     <h3>Informacion</h3>
                     <ul>
                         <li><a href="#">Sobre nosotros</a></li>
-                        <li><a href="#">Como pedir</a></li>
+                        <li><a href="#">¿Como pedir?</a></li>
                         <li><a href="#">Ubicacion fisica</a></li>
                     </ul>
                 </div>
@@ -214,16 +187,36 @@
                         <li><a href="#">Tiktok</a></li>
                     </ul>      
                 </div>
-                
             </div>
             
             <div class="copyright">
                 <p>Copyright &copy; 2026. Todos los derechos reservados.</p>
             </div>
-            
         </div>
-
     </footer>
 
+    <!-- codigo para escrollear con los botones-->
+    <script>
+        const contenedorProductos = document.getElementById('cont-productos');
+        const btnLeft = document.getElementById('btn-left');
+        const btnRight = document.getElementById('btn-right');
+
+       
+        const scrollAmount = 320; 
+
+        btnLeft.addEventListener('click', () => {
+            contenedorProductos.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth' 
+            });
+        });
+
+        btnRight.addEventListener('click', () => {
+            contenedorProductos.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
