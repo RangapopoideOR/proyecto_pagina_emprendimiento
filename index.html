@@ -196,28 +196,11 @@
         </div>
     </footer>
 
-    <!-- codigo para escrollear con los botones-->
-    <script>
-        const contenedorProductos = document.getElementById('cont-productos');
-        const btnLeft = document.getElementById('btn-left');
-        const btnRight = document.getElementById('btn-right');
 
-       
-        const scrollAmount = 320; 
+    <a href="https://wa.me/584120000000?text=Hola,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" class="btn-flotante-ws" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
 
-        btnLeft.addEventListener('click', () => {
-            contenedorProductos.scrollBy({
-                left: -scrollAmount,
-                behavior: 'smooth' 
-            });
-        });
-
-        btnRight.addEventListener('click', () => {
-            contenedorProductos.scrollBy({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-        });
-    </script>
+    <script src="funciones_principales.js"></script>
 </body>
 </html>
