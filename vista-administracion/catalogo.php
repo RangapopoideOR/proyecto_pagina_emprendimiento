@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrar Catálogo</title>
-    <link rel="stylesheet" href="/CSS/CSS_SuperPro.css">
+    <link rel="stylesheet" href="../CSS/CSS_Usuarios.css">
+    <link rel="stylesheet" href="../CSS/CSS_AdminPanel.css">
 </head>
 <body>
     <div class="contenedor">

@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>publicar producto</title>
-    <link rel="stylesheet" href="/CSS/CSS_SuperPro.css">
+    <link rel="stylesheet" href="../CSS/CSS_Usuarios.css">
+    <link rel="stylesheet" href="../CSS/CSS_AdminPanel.css">
 </head>
 <body>
     <div class="contenedor">
 
         <!-- Barra Superior -->
         <div class="barra_superior">
-            <h2><a href="catalogo.html">catálogo</a> > publicar</h2>
+            <h2><a href="catalogo.php">catálogo</a> > publicar</h2>
         </div>
         
         <!-- Panel Izquierdo -->
