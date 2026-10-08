@@ -853,3 +853,289 @@ section{
         font-size: 12px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   10. VISTA CATÁLOGO PÚBLICO (EXCLUSIVO CLIENTES)
+   ========================================== */
+
+.cat-principal {
+    width: 100%;
+    min-height: calc(100vh - 10vh);
+    background: linear-gradient(180deg, #f4f6f9 0%, #e9ecef 100%);
+    padding: 40px 5%;
+    box-sizing: border-box;
+}
+
+/* Banner Superior */
+.cat-hero {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.cat-titulo {
+    font-size: 2.3em;
+    color: var(--color-textos);
+    margin: 0 0 8px 0;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.cat-subtitulo {
+    color: #64748b;
+    font-size: 1.05em;
+    margin: 0;
+}
+
+/* Barra de Herramientas y Filtros */
+.cat-barra-herramientas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    margin-bottom: 40px;
+    border: 1px solid #e2e8f0;
+}
+
+.cat-control-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--fondo);
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0 14px;
+    transition: all 0.3s ease;
+}
+
+.cat-control-item:focus-within {
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 3px rgba(59, 107, 154, 0.18);
+    background-color: #fff;
+}
+
+.cat-control-buscar {
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+.cat-icono {
+    font-size: 1em;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+.cat-control-buscar input {
+    border: none;
+    background: transparent;
+    padding: 12px 0;
+    width: 100%;
+    font-size: 0.95em;
+    color: var(--color-textos);
+    outline: none;
+}
+
+.cat-select {
+    border: none;
+    background: transparent;
+    padding: 12px 10px 12px 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--color-textos);
+    outline: none;
+    cursor: pointer;
+}
+
+/* Grilla de Productos */
+.cat-grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Tarjetas */
+.cat-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.cat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(59, 107, 154, 0.15);
+}
+
+.cat-card-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+.cat-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.cat-card:hover .cat-card-img-wrap img {
+    transform: scale(1.06);
+}
+
+/* Badges */
+.cat-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 700;
+    color: #fff;
+    z-index: 2;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.cat-badge-oferta { background-color: #e74c3c; }
+.cat-badge-nuevo { background-color: #27ae60; }
+.cat-badge-agotado { background-color: #64748b; }
+
+/* Cuerpo de la tarjeta */
+.cat-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cat-categoria-tag {
+    font-size: 0.78em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-ambar);
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.cat-card-titulo {
+    font-size: 1.15em;
+    color: var(--color-textos);
+    margin: 0 0 8px 0;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.cat-card-desc {
+    font-size: 0.88em;
+    color: #64748b;
+    margin: 0 0 16px 0;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.cat-precio-box {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.cat-precio {
+    font-size: 1.4em;
+    font-weight: 800;
+    color: var(--color-textos);
+}
+
+.cat-precio-viejo {
+    font-size: 0.9em;
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+/* Botón de Detalles */
+.cat-btn-accion {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-principal);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.cat-btn-accion:hover {
+    background-color: var(--acento-secundarios);
+}
+
+.cat-btn-accion.desactivado {
+    background-color: #cbd5e1;
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* Sección Inferior de Beneficios */
+.cat-beneficios {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.cat-beneficio-card {
+    text-align: center;
+    max-width: 250px;
+}
+
+.cat-beneficio-icono {
+    font-size: 2em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.cat-beneficio-card h4 {
+    margin: 0 0 5px 0;
+    color: var(--color-textos);
+}
+
+.cat-beneficio-card p {
+    margin: 0;
+    font-size: 0.88em;
+    color: #64748b;
+}

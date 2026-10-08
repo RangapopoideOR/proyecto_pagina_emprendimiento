@@ -12,7 +12,7 @@
         <nav class="nav-principal">
             <ul class="menu-navegacion">
                 <li><a href="index.php" class="activo">Inicio</a></li>
-                <li><a href="tienda.php">Catálogo</a></li>
+                <li><a href="catalogo.php">Catálogo</a></li>
                 <li><a href="nosotros.php">Nosotros</a></li>
                 <li><a href="contacto.php">Contáctenos</a></li>
             </ul>

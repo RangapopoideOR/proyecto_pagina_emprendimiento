@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>publicar producto</title>
-    <link rel="stylesheet" href="../CSS/CSS_Usuarios.css">
     <link rel="stylesheet" href="../CSS/CSS_AdminPanel.css">
-</head>
+<?php include('../includes/head.php');?>
 <body>
+
+
+
+    <?php require_once('../php/main.php');?>
+
     <div class="contenedor">
 
         <!-- Barra Superior -->
@@ -52,45 +52,50 @@
         <div class="contenido_contenedor">
             
            
-            <form class="formulario-principal">
+            <form  action="../php/guardar_producto.php" method="POST" class="FormularioAjax formulario-principal" autocomplete="off" enctype="multipart/form-data"
+            >
                 
                 <div class="formulario-cont">
                     
                     <div class="campo">
                         <label for="producto">Producto</label>
-                        <input type="text" id="producto" name="producto">
+                        <input type="text" id="producto" name="nombre" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}" maxlength="40" required>
                     </div>
 
                     <div class="campo">
                         <label for="descripcion">Descripción</label>
-                        <input type="text" id="descripcion" name="descripcion">
+                        <input type="text" id="descripcion" name="descripcion" pattern="[a-zA-Z0-9 ]{5,50}" maxlength="80" required>
                     </div>
 
                     <div class="campo">
                         <label for="precio">Precio</label>
-                        <input type="text" id="precio" name="precio">
+                        <input type="text" id="precio" name="precio" pattern="[0-9]{1,20}" maxlength="20" required>
                     </div>
 
                     <div class="campo">
                         <label for="categoria">Categoría</label>
                         <select id="categoria" name="categoria">
-                            <option value="" disabled selected>Seleccione una categoría...</option>
-                            <option value="rones">Rones</option>
-                            <option value="cervezas">Cervezas</option>
-                            <option value="vinos">Vinos</option>
-                            <option value="licores">Licores</option>
+                            <option value=""  selected"">Seleccione una categoría...</option>
+                            
+                            <?php
+                            $categorias=conexion();
+                            $categorias=$categorias->query('SELECT * FROM categorias');
+
+                            if($categorias->rowCount()>0){
+                                $categorias=$categorias->fetchAll();
+                                foreach($categorias as $row){
+                                    echo'<option value="'.$row['id_categoria'].'">'.$row['nombre_categoria'].'</option>';
+
+                                }
+                            }
+                            $categorias=null;
+                            ?>
+
+
                         </select>
                     </div>
 
-                    <div class="campo">
-                        <label for="seccion">Sección</label>
-                        <select id="seccion" name="seccion">
-                            <option value="" disabled selected>Seleccione una sección...</option>
-                            <option value="nacionales">Nacionales</option>
-                            <option value="importados">Importados</option>
-                            <option value="ofertas">Ofertas Especiales</option>
-                        </select>
-                    </div>
+                    
                 </div>
                 
                 <div class="formulario-cont-2">
@@ -131,5 +136,9 @@
             }
         });
     </script>
+
+
+
+
 </body>
 </html>
