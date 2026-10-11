@@ -54,7 +54,8 @@
            
             <form  action="../php/guardar_producto.php" method="POST" class="FormularioAjax formulario-principal" autocomplete="off" enctype="multipart/form-data"
             >
-                
+                <div class="form-rest"></div>
+
                 <div class="formulario-cont">
                     
                     <div class="campo">
@@ -64,7 +65,7 @@
 
                     <div class="campo">
                         <label for="descripcion">Descripción</label>
-                        <input type="text" id="descripcion" name="descripcion" pattern="[a-zA-Z0-9 ]{5,50}" maxlength="80" required>
+                        <input type="text" id="descripcion" name="descripcion" pattern="[a-zA-Z0-9 ]{5,110}" maxlength="80" required>
                     </div>
 
                     <div class="campo">
@@ -102,7 +103,7 @@
                     
                     <label class="cont-img" for="input-imagen">
                         <h2 id="texto-imagen">IMAGEN</h2>
-                        <input type="file" id="input-imagen" accept="image/*" style="display: none;">
+                        <input type="file" id="input-imagen" name="producto_foto" accept=".jpg, .png, .jpeg" style="display: none;">
                         <img id="vista-previa" src="" alt="Vista previa de producto" style="display: none;">
                     </label>
 
@@ -138,7 +139,7 @@
     </script>
 
 
-
+<script src="../js/ajax.js"></script>
 
 </body>
 </html>

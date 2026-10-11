@@ -1,4 +1,3 @@
-// no listo //
 
 <?php 
 
@@ -77,4 +76,114 @@ echo '
 }
 $check_categoria=null;
 
+#directorio de imagenes#
+$imgDirectorio = '../img/productos';
 
+if($_FILES['producto_foto']['name']!="" && $_FILES['producto_foto']['size']>0){
+
+    #creando directorio#
+
+    if(!file_exists($imgDirectorio)){
+        if(!mkdir($imgDirectorio,0777)){
+            echo '
+            <div class="">
+                <strong>¡ERROR!</strong><br>
+                Error al CREAR el directorio.
+            </div>
+        ';
+        exit();
+        }
+    }
+
+    #verificando formato de las imagenes#
+
+    if(mime_content_type($_FILES['producto_foto']['tmp_name'])!="image/jpeg" && 
+    mime_content_type($_FILES['producto_foto']['tmp_name'])!="image/png" ){
+        echo '
+            <div class="">
+                <strong>¡ERROR!</strong><br>
+                La IMAGEN seleccionada es de un formato no permitido.
+            </div>
+        ';
+        exit();
+
+    }
+
+    #verificar peso de imagen (5mb)#
+
+    if(($_FILES['producto_foto']['size']/1024)>5120){
+        echo '
+            <div class="">
+                <strong>¡ERROR!</strong><br>
+                La IMAGEN seleccionada supera el peso permitido.
+            </div>
+        ';
+        exit();
+    }
+
+    #extension de la imagen#
+    switch(mime_content_type($_FILES['producto_foto']['tmp_name'])){
+        case 'image/jpeg';
+        $img_ext=".jpg";
+        break;
+
+        case 'image/png';
+        $img_ext=".png";
+        break;
+    }
+
+    chmod($imgDirectorio,0777);
+
+    $img_nombre=renombrar_fotos($nombre);
+    $foto=$img_nombre.$img_ext;
+
+    #moviendo imagen a directorio#
+    if(!move_uploaded_file($_FILES['producto_foto']['tmp_name'],$imgDirectorio.'/'.$foto)){
+        echo '
+            <div class="">
+                <strong>¡ERROR!</strong><br>
+                No fue posible subir la IMAGEN.
+            </div>
+        ';
+        exit();
+    }
+
+}else{
+    $foto="";
+}
+
+#guardando datos#
+
+$guardar_producto=conexion();
+$guardar_producto=$guardar_producto->prepare( "INSERT INTO catalogo(nombre_producto, descripcion_producto, precio_producto, img_producto, id_categoria) VALUES (:nombre, :descripcion, :precio, :foto, :categoria)");
+
+$marcadores=[
+    ":nombre"=>$nombre,
+    ":descripcion"=>$descripcion,
+    ":precio"=>$precio,
+    ":foto"=>$foto,
+    ":categoria"=>$categoria
+];
+
+$guardar_producto->execute($marcadores);
+
+if($guardar_producto->rowCount()==1){
+        echo '
+            <div class="">
+                <strong>PRODUCTO REGISTRADO</strong><br>
+                El producto fue registrado con exito.
+            </div>
+        ';
+}else{
+    if(is_file($imgDirectorio.$foto)){
+        chmod($imgDirectorio.$foto,0777);
+        unlink($imgDirectorio.$foto);
+    }
+    echo '
+            <div class="">
+                <strong>¡ERROR!</strong><br>
+                No fue posible registrar el PRODUCTO.
+            </div>
+        ';
+        exit();
+}

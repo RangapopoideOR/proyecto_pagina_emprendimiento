@@ -11,11 +11,9 @@ function enviar_formulario_ajax(e){
         let method=this.getAttribute("method");
         let action=this.getAttribute("action");
 
-        let encabezados= new Headers();
 
         let config={
             method: method,
-            headers: encabezados,
             mode: 'cors',
             cache: 'no-cache',
             body: data
