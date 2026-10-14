@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2026 a las 18:21:07
+-- Tiempo de generación: 11-10-2026 a las 23:49:32
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `pagina_web_proyecto`
+-- Base de datos: `paginaweb`
 --
 
 -- --------------------------------------------------------
@@ -30,10 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `catalogo` (
   `id_producto` int(11) NOT NULL,
   `nombre_producto` varchar(150) NOT NULL,
+  `descripcion_producto` varchar(500) NOT NULL,
   `precio_producto` decimal(10,2) NOT NULL,
-  `img_producto` varchar(255) DEFAULT NULL,
+  `img_producto` varchar(500) DEFAULT NULL,
   `id_categoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `catalogo`
+--
+
+INSERT INTO `catalogo` (`id_producto`, `nombre_producto`, `descripcion_producto`, `precio_producto`, `img_producto`, `id_categoria`) VALUES
+(1, 'sombrero', 'sombrero marron', 20.00, 'sombrero_90.jpg', 4),
+(2, 'sombrero luffy', 'sombrero del pirata luffy', 10000.00, 'sombrero_luffy_45.jpg', 4),
+(3, 'mesa', 'mesa de madera clara', 45.00, 'mesa_74.png', 2);
 
 -- --------------------------------------------------------
 
@@ -45,6 +55,16 @@ CREATE TABLE `categorias` (
   `id_categoria` int(11) NOT NULL,
   `nombre_categoria` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`) VALUES
+(1, 'electronicos'),
+(2, 'hogar'),
+(3, 'oficina'),
+(4, 'otros');
 
 --
 -- Índices para tablas volcadas
@@ -71,13 +91,13 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `catalogo`
 --
 ALTER TABLE `catalogo`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
