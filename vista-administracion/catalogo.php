@@ -24,22 +24,10 @@
             <div class="modulos">
                 <ul>
                     <li class="select">catálogo</li>
-                    <ul class="sub-modulos">
-                        <li>administrar</li>
-                        <li>publicar producto</li>
-                    </ul>
-
-                    <li class="modulo">categorias</li>
-                    <ul class="sub-modulos">
-                        <li>administrar</li>
-                        <li>nueva categoria</li>
-                    </ul>
-
-                    <li class="modulo">ofertas</li>
-                    <ul class="sub-modulos">
-                        <li>administrar</li>
-                        <li>nueva oferta</li>
-                    </ul>
+                    
+                    <a href="categorias.php"><li class="modulo">categorias</li></a>
+                    
+                    <a href="ofertas.php"><li class="modulo">ofertas</li></a>
                 </ul>
                 <ul>
                     <li class="modulo">Administrar pagina</li>
