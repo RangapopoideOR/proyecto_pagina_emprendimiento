@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- <link rel="stylesheet" href="../CSS/CSS_Usuarios.css"> -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Producto</title>
     <link rel="stylesheet" href="../CSS/CSS_AdminPanel.css">
-<?php include('../includes/head.php');?>
+</head>
 <body>
 
-
-
-    <?php require_once('../php/main.php');?>
+    <?php require_once('../php/main.php'); ?>
 
     <div class="contenedor">
 
@@ -46,7 +47,6 @@
                     <li class="modulo">Administrar pagina</li>
                 </ul>
             </div>
-
         </div>
         
       
@@ -76,16 +76,20 @@
                         <select id="categoria" name="categoria" required>
                             <option value="" selected disabled>Seleccione una categoría...</option>
                             <?php
-                            $categorias = conexion();
-                            $categorias = $categorias->query('SELECT * FROM categorias');
-
-                            if ($categorias->rowCount() > 0) {
-                                $categorias = $categorias->fetchAll();
-                                foreach ($categorias as $row) {
-                                    echo '<option value="' . $row['id_categoria'] . '">' . $row['nombre_categoria'] . '</option>';
+                            try {
+                                $conexion_db = conexion();
+                                if ($conexion_db) {
+                                    $consulta = $conexion_db->query('SELECT * FROM categorias');
+                                    if ($consulta && $consulta->rowCount() > 0) {
+                                        $categorias = $consulta->fetchAll();
+                                        foreach ($categorias as $row) {
+                                            echo '<option value="' . $row['id_categoria'] . '">' . $row['nombre_categoria'] . '</option>';
+                                        }
+                                    }
                                 }
+                            } catch (\Throwable $th) {
+                                echo '<option value="" disabled>Error al cargar categorías</option>';
                             }
-                            $categorias = null;
                             ?>
                         </select>
                     </div>
@@ -109,7 +113,6 @@
         
     </div>
 
-   
     <script>
         const inputImagen = document.getElementById('input-imagen');
         const vistaPrevia = document.getElementById('vista-previa');
@@ -129,8 +132,6 @@
         });
     </script>
 
-
-<script src="../js/ajax.js"></script>
-
+    <script src="../js/ajax.js"></script>
 </body>
 </html>
