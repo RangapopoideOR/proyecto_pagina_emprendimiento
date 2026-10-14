@@ -108,3 +108,6 @@ function conexion(){
                 $tabla.='</nav>';
             return $tabla;
         }
+
+
+        // JOSE AJUSTA AQUI LAS CLASES CON EL CSS DEL PAGINADOR 
