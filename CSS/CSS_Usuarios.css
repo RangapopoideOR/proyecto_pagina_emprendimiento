@@ -62,7 +62,7 @@ header.header-moderno {
 
 .header-cont {
     width: 100%;
-    max-width: 1300px;
+    /* max-width: 1300px; */
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -543,13 +543,17 @@ section{
 .pre-footer-cont {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    justify-content: space-around;
+    
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
     gap: 25px;
 }
 
 .info-card {
     display: flex;
+    flex: 1;
     align-items: center;
     gap: 16px;
     background-color: #ffffff;
@@ -738,7 +742,7 @@ section{
 /* ==========================================================================
    10. MEDIA QUERIES (ADAPTABILIDAD A DISPOSITIVOS MÓVILES)
    ========================================================================== */
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     body {
         overflow-x: hidden;
     }
@@ -800,7 +804,7 @@ section{
         display: none;
     }
 
-    .pre-footer {
+    .pre-footer-cont {
         display: flex;
         flex-direction: column; 
         gap: 20px;

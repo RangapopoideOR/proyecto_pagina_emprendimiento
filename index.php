@@ -19,7 +19,7 @@
         <section>
             <div class="contenido-seccion">
                 <div class="seccion-titulo">
-                    <h2>mejor categoria</h2>
+                    <h2>Sombreros</h2>
                 </div>
 
                 <div class="carrusel-productos">
@@ -35,9 +35,6 @@
     
                             <div class="producto_info">
                                 <h3>sombrero pelo de guama</h3>
-    
-                                <p class="descripcion-corta">Sombrero llanero clasico de coleccion.</p>
-                                
                                 <div class="precio">
                                     <span class="precio-actual">$65.00</span>                            
                                 </div>
@@ -51,9 +48,6 @@
     
                             <div class="producto_info">
                                 <h3>sombrero pelo de guama</h3>
-    
-                                <p class="descripcion-corta">Sombrero llanero clasico de coleccion.</p>
-                                
                                 <div class="precio">
                                     <span class="precio-actual">$65.00</span>                            
                                 </div>
@@ -67,25 +61,6 @@
     
                             <div class="producto_info">
                                 <h3>sombrero pelo de guama</h3>
-    
-                                <p class="descripcion-corta">Sombrero llanero clasico de coleccion.</p>
-                                
-                                <div class="precio">
-                                    <span class="precio-actual">$65300</span>                            
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="producto-detalle.php" class="producto">
-                            <div class="producto-img">
-                                <img src="img/sombrero-luffy.jpeg" alt="">
-                            </div>
-    
-                            <div class="producto_info">
-                                <h3>sombrero pelo de guama</h3>
-    
-                                <p class="descripcion-corta">Sombrero llanero clasico de coleccion.</p>
-                                
                                 <div class="precio">
                                     <span class="precio-actual">$65.00</span>                            
                                 </div>
@@ -99,9 +74,19 @@
     
                             <div class="producto_info">
                                 <h3>sombrero pelo de guama</h3>
+                                <div class="precio">
+                                    <span class="precio-actual">$65.00</span>                            
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="producto-detalle.php" class="producto">
+                            <div class="producto-img">
+                                <img src="img/sombrero-luffy.jpeg" alt="">
+                            </div>
     
-                                <p class="descripcion-corta">Sombrero llanero clasico de coleccion.</p>
-                                
+                            <div class="producto_info">
+                                <h3>sombrero pelo de guama</h3>
                                 <div class="precio">
                                     <span class="precio-actual">$65.00</span>                            
                                 </div>

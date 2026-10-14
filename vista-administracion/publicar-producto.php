@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- <link rel="stylesheet" href="../CSS/CSS_Usuarios.css"> -->
     <link rel="stylesheet" href="../CSS/CSS_AdminPanel.css">
 <?php include('../includes/head.php');?>
 <body>
@@ -51,13 +52,10 @@
       
         <div class="contenido_contenedor">
             
-           
-            <form  action="../php/guardar_producto.php" method="POST" class="FormularioAjax formulario-principal" autocomplete="off" enctype="multipart/form-data"
-            >
+            <form action="../php/guardar_producto.php" method="POST" class="FormularioAjax formulario-principal" autocomplete="off" enctype="multipart/form-data">
                 <div class="form-rest"></div>
 
                 <div class="formulario-cont">
-                    
                     <div class="campo">
                         <label for="producto">Producto</label>
                         <input type="text" id="producto" name="nombre" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}" maxlength="40" required>
@@ -75,32 +73,25 @@
 
                     <div class="campo">
                         <label for="categoria">Categoría</label>
-                        <select id="categoria" name="categoria">
-                            <option value=""  selected"">Seleccione una categoría...</option>
-                            
+                        <select id="categoria" name="categoria" required>
+                            <option value="" selected disabled>Seleccione una categoría...</option>
                             <?php
-                            $categorias=conexion();
-                            $categorias=$categorias->query('SELECT * FROM categorias');
+                            $categorias = conexion();
+                            $categorias = $categorias->query('SELECT * FROM categorias');
 
-                            if($categorias->rowCount()>0){
-                                $categorias=$categorias->fetchAll();
-                                foreach($categorias as $row){
-                                    echo'<option value="'.$row['id_categoria'].'">'.$row['nombre_categoria'].'</option>';
-
+                            if ($categorias->rowCount() > 0) {
+                                $categorias = $categorias->fetchAll();
+                                foreach ($categorias as $row) {
+                                    echo '<option value="' . $row['id_categoria'] . '">' . $row['nombre_categoria'] . '</option>';
                                 }
                             }
-                            $categorias=null;
+                            $categorias = null;
                             ?>
-
-
                         </select>
                     </div>
-
-                    
                 </div>
                 
                 <div class="formulario-cont-2">
-                    
                     <label class="cont-img" for="input-imagen">
                         <h2 id="texto-imagen">IMAGEN</h2>
                         <input type="file" id="input-imagen" name="producto_foto" accept=".jpg, .png, .jpeg" style="display: none;">
@@ -111,7 +102,7 @@
                         <button type="submit">Publicar</button>
                     </div>
                 </div>
-
+                
             </form>
 
         </div>

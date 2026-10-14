@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>modificar produto</title>
-    <link rel="stylesheet" href="../CSS/CSS_Usuarios.css">
+    <!-- <link rel="stylesheet" href="../CSS/CSS_Usuarios.css"> -->
     <link rel="stylesheet" href="../CSS/CSS_AdminPanel.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 
         <!-- Barra Superior -->
         <div class="barra_superior">
-            <h2><a href="catalogo.php">catálogo</a>  modificar</h2>
+            <h2><a href="catalogo.php">catálogo</a> > modificar</h2>
         </div>
         
         <!-- Panel Izquierdo -->

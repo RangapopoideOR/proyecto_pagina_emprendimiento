@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrar Catálogo</title>
-    <link rel="stylesheet" href="../CSS/CSS_Usuarios.css">
+    <!-- <link rel="stylesheet" href="../CSS/CSS_Usuarios.css"> -->
     <link rel="stylesheet" href="../CSS/CSS_AdminPanel.css">
 </head>
 <body>
@@ -55,7 +55,7 @@
                 <h3>Productos publicados: 4</h3>
                 <div style="display: flex; align-items: center;gap: 10px;">
                     <div>
-                        <a href="/vista-administracion/publicar-producto.html" class="btn-publicar">+ Publicar</a>
+                        <a href="publicar-producto.php" class="btn-publicar">+ Publicar</a>
                     </div>
                     <div class="buscador">
                         <input type="text" id="buscador" placeholder="buscar artículo...">
@@ -157,7 +157,7 @@
                     </div>
                     
                     <div>
-                        <a href="/vista-administracion/modificar.html" class="btn-modificar">Modificar</a>
+                        <a href="modificar.php" class="btn-modificar">Modificar</a>
                     </div>
                 </div>
             </div>
