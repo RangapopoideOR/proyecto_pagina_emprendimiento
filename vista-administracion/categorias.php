@@ -12,7 +12,8 @@
 
         <!-- Barra Superior -->
         <div class="barra_superior">
-            <h2>categorias</h2>
+            <button class="btn-menu-hamburguesa" onclick="toggleMenu()">☰</button>
+            <h2>catálogo</h2>
         </div>
         
         <!-- Panel Izquierdo -->
@@ -43,10 +44,10 @@
                 <h3>categorias: 2</h3>
                 <div style="display: flex; align-items: center;gap: 10px;">
                     <div>
-                        <a href="publicar-producto.php" class="btn-publicar">+ nueva categoria</a>
+                        <a href="#" class="btn-publicar">+ nueva categoria</a>
                     </div>
                     <div class="buscador">
-                        <input type="text" id="buscador" placeholder="buscar ofertas...">
+                        <input type="text" id="buscador" placeholder="buscar categorias...">
                     </div>
                 </div>
             </div>
@@ -88,6 +89,30 @@
         </div>
         
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const btnHamburguesa = document.querySelector('.btn-menu-hamburguesa');
+            const moduloContenedor = document.querySelector('.modulo_contenedor');
+
+            // Abrir / Cerrar el menú al hacer clic
+            btnHamburguesa.addEventListener('click', function(e) {
+                e.stopPropagation(); // Evita que el clic se propague inmediatamente al document
+                moduloContenedor.classList.toggle('active');
+            });
+
+            // Cerrar el menú al hacer clic fuera de él
+            document.addEventListener('click', function(e) {
+                // Verifica si el menú está abierto y si el clic NO ocurrió dentro del menú ni sobre el botón
+                if (moduloContenedor.classList.contains('active') && 
+                    !moduloContenedor.contains(e.target) && 
+                    !btnHamburguesa.contains(e.target)) {
+                    
+                    moduloContenedor.classList.remove('active');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
