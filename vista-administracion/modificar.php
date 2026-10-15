@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modificar produto</title>
+    <!-- <link rel="stylesheet" href="../CSS/CSS_Usuarios.css"> -->
+    <link rel="stylesheet" href="../CSS/CSS_AdminPanel.css">
+</head>
+<body>
+    <div class="contenedor">
+
+        <!-- Barra Superior -->
+        <div class="barra_superior">
+            <h2><a href="catalogo.php">catálogo</a> > modificar</h2>
+        </div>
+        
+        <!-- Panel Izquierdo -->
+        <div class="modulo_contenedor">
+            <div class="logo_cont">
+                <h2 class="logo">[LOGO TIENDA]</h2>
+            </div>
+            
+            <div class="modulos">
+                <ul>
+                    <li class="select">catálogo</li>
+                    
+                    <a href="categorias.php"><li class="modulo">categorias</li></a>
+                    
+                    <a href="configuracion.php"><li class="modulo">configuración</li></a>
+                </ul>
+                <ul>
+                    <li class="modulo">Administrar pagina</li>
+                </ul>
+            </div>
+
+        </div>
+        
+      
+        <div class="contenido_contenedor">
+            
+           
+            <form class="formulario-principal">
+                
+                <div class="formulario-cont">
+                    
+                    <div class="campo">
+                        <label for="producto">Producto</label>
+                        <input value="cacique" type="text" id="producto" name="producto">
+                    </div>
+
+                    <div class="campo">
+                        <label for="descripcion">Descripción</label>
+                        <input value="caja - 12 unidades" type="text" id="descripcion" name="descripcion">
+                    </div>
+    
+                    <div class="campo">
+                        <label for="precio">Precio</label>
+                        <input value="12" type="text" id="precio" name="precio">
+                    </div>
+
+                    <div class="campo">
+                        <label for="categoria">Categoría</label>
+                        <select id="categoria" name="categoria">
+                            <option value=""disabled>Seleccione una categoría...</option>
+                            <option value="rones"selected>Rones</option>
+                            <option value="cervezas">Cervezas</option>
+                            <option value="vinos">Vinos</option>
+                            <option value="licores">Licores</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="seccion">Sección</label>
+                        <select id="seccion" name="seccion">
+                            <option value=""disabled>Seleccione una sección...</option>
+                            <option value="nacionales"selected>Nacionales</option>
+                            <option value="importados">Importados</option>
+                            <option value="ofertas">Ofertas Especiales</option>
+                        </select>
+                    </div>
+
+                </div>
+                
+                <div class="formulario-cont-2">
+                    
+                    <label class="cont-img" for="input-imagen">
+                        <h2 id="texto-imagen">IMAGEN</h2>
+                        <input type="file" id="input-imagen" accept="image/*" style="display: none;">
+                        <img id="vista-previa" src="" alt="Vista previa de producto" style="display: none;">
+                    </label>
+
+                    <div class="boton-cont">
+                        <button type="submit">Modificar</button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+        
+    </div>
+
+   
+    <script>
+        const inputImagen = document.getElementById('input-imagen');
+        const vistaPrevia = document.getElementById('vista-previa');
+        const textoImagen = document.getElementById('texto-imagen');
+
+        inputImagen.addEventListener('change', function(evento) {
+            const archivo = evento.target.files[0];
+            if (archivo) {
+                const lector = new FileReader();
+                lector.onload = function(e) {
+                    vistaPrevia.src = e.target.result;
+                    vistaPrevia.style.display = 'block'; 
+                    textoImagen.style.display = 'none';  
+                }
+                lector.readAsDataURL(archivo);
+            }
+        });
+    </script>
+</body>
+</html>

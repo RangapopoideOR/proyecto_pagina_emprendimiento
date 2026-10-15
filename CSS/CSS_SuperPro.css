@@ -1,0 +1,1315 @@
+/* ==========================================================================
+   1. VARIABLES DE COLOR Y RESET GLOBAL
+   ========================================================================== */
+:root {
+    --color-principal: #3b6b9a;
+    --color-principal-hover: rgb(51, 136, 230);
+    --color-textos: #1a2b4c;
+    --color-textos-secundarios: #555;
+    --color-ambar: #cda250;
+    --acento-secundarios: #2a4c6a;
+    --acento-calido: #9a6a3a;
+    --fondo: #f4f6f9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+/* Tipografía base */
+h1 { font-size: 2.1em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.2em; }
+p  { font-size: 0.95em; }
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ==========================================================================
+   2. TIENDA PÚBLICA - HEADER MODERNO Y LLAMATIVO
+   ========================================================================== */
+header.header-moderno {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px); /* Efecto cristal translúcido */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.header-cont {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    gap: 20px;
+}
+
+/* 1. Logotipo con Degradado */
+.cont-logo .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.5em;
+    font-weight: 900;
+    color: var(--color-textos);
+    letter-spacing: -0.5px;
+    transition: transform 0.2s ease;
+}
+
+.cont-logo .logo:hover {
+    transform: scale(1.02);
+}
+
+.logo-icono {
+    font-size: 1.1em;
+}
+
+.logo-destacado {
+    background: linear-gradient(135deg, var(--color-principal) 0%, #2a4c6a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 2px;
+}
+
+/* 2. Menú de Navegación con Indicador Flotante */
+.nav-principal {
+    display: flex;
+    align-items: center;
+}
+
+.menu-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #f4f6f9;
+    padding: 5px;
+    border-radius: 30px;
+    border: 1px solid #e2e8f0;
+}
+
+.menu-navegacion a {
+    display: block;
+    padding: 8px 18px;
+    color: var(--color-textos-secundarios);
+    font-weight: 600;
+    font-size: 0.9em;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+}
+
+.menu-navegacion a:hover {
+    color: var(--color-principal);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.menu-navegacion a.activo {
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--color-principal) 0%, #2a4c6a 100%);
+    box-shadow: 0 4px 10px rgba(59, 107, 154, 0.3);
+}
+
+/* 3. Buscador Elegante y Estable */
+.cont-buscador {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 240px; /* Tamaño fijo para no deformar el menú */
+    flex-shrink: 0; /* Evita que el contenedor se aplaste */
+}
+
+.cont-buscador input {
+    width: 100%;
+    height: 40px;
+    font-size: 0.88em;
+    font-weight: 500;
+    padding: 8px 40px 8px 16px; /* Espacio derecho reservado para el botón */
+    border: 1.5px solid #e2e8f0;
+    border-radius: 20px;
+    background-color: #f8fafc;
+    color: var(--color-textos);
+    transition: all 0.25s ease;
+}
+
+.cont-buscador input::placeholder {
+    color: #94a3b8;
+}
+
+.cont-buscador input:focus {
+    outline: none;
+    border-color: var(--color-principal);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 107, 154, 0.12); /* Brillo suave azul sin cambiar el tamaño */
+}
+
+.cont-buscador button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%); /* Centrado vertical exacto */
+    background: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cont-buscador button:hover {
+    color: var(--color-principal);
+    background-color: #f1f5f9;
+}
+/* 4. Botón de WhatsApp con Animación y Sombra Verde */
+.panel-usuario {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.btn-header-ws {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: #ffffff;
+    font-size: 0.88em;
+    font-weight: 700;
+    padding: 8px 18px 8px 10px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+    transition: all 0.3s ease;
+}
+
+.ws-icono-cont {
+    background: rgba(255, 255, 255, 0.2);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-header-ws:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.5);
+    color: #ffffff;
+}
+
+/* Adaptabilidad Móvil */
+@media (max-width: 992px) {
+    .header-cont {
+        flex-wrap: wrap;
+        padding: 12px 16px;
+    }
+
+    .nav-principal {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        padding-top: 5px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cont-buscador {
+        width: 100%;
+        order: 4;
+        margin-top: 5px;
+    }
+
+    .cont-buscador input:focus {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================================================
+   3. TIENDA PÚBLICA - SECCIONES, CARRUSEL Y PRODUCTOS
+   ========================================================================== */
+section {
+    margin-top: 30px;
+}
+
+.contenido-seccion {
+    padding: 0 10px;
+    margin: 0 10px;
+}
+
+.seccion-titulo {
+    margin-bottom: 30px;
+}
+
+.seccion-titulo h2 {
+    font-weight: 300;
+}
+
+.carrusel-productos {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cont-productos {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 25px;
+    scroll-snap-type: x mandatory;
+}
+
+/* Ocultar barra de scroll */
+.cont-productos::-webkit-scrollbar {
+    display: none;
+}
+
+.cont-productos::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 10px;
+}
+
+/* Botones de navegación del carrusel */
+.btn-scroll {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    background-color: #fff;
+    color: var(--color-principal);
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+}
+
+.btn-scroll:hover {
+    background-color: var(--color-principal);
+    color: #fff;
+}
+
+.btn-scroll.left { left: -20px; }
+.btn-scroll.right { right: -20px; }
+
+/* Tarjeta individual de producto */
+.producto {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #f0f0f0;
+    padding: 16px;
+    color: inherit;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.producto-img {
+    width: 100%;
+    max-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.producto-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.producto_info {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.producto_info h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.3;
+    text-transform: capitalize;
+}
+
+.descripcion-corta {
+    font-size: 0.85rem;
+    color: var(--color-textos-secundarios);
+    margin: 0;
+}
+
+.precio-actual {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000000;
+    margin-top: 4px;
+}
+
+
+/* ==========================================================================
+   4. TIENDA PÚBLICA - VISTA DETALLE DE PRODUCTO Y COMPONENTES
+   ========================================================================== */
+.barra-navegacion {
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.barra-navegacion ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.barra-navegacion li {
+    color: var(--color-textos);
+    font-size: 0.86em;
+}
+
+.barra-navegacion a {
+    color: var(--color-principal);
+}
+
+.barra-navegacion a:hover {
+    color: var(--color-textos);
+}
+
+.cont-producto-detalles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: auto;
+    width: 100%;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.img-vista-detalle {
+    min-width: 50%;
+    max-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 0 2px #cfcfcf;
+    border-radius: 10px;
+}
+
+.img-vista-detalle img {
+    border-radius: 10px;
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+}
+
+.producto-detalles {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.detalles-texto {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+}
+
+.badge-id {
+    color: #888;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.titulo-articulo {
+    font-weight: bold;
+    font-size: 2em;
+    margin: 0;
+    color: var(--color-textos);
+    text-transform: capitalize;
+}
+
+.precio-destacado {
+    font-weight: bold;
+    font-size: 1.8em;
+    color: var(--color-textos);
+    margin: 0;
+}
+
+.categoria-des {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--color-ambar);
+    padding: 6px 12px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.cont-btn-consultar {
+    padding: 20px;
+}
+
+.btn-consultar {
+    background-color: var(--color-principal);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.2s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-consultar:hover {
+    background-color: var(--color-principal-hover);
+    transform: translateY(-2px);
+}
+
+
+
+/* ==========================================================================
+   PRE-FOOTER (TARJETAS DE BENEFICIOS)
+   ========================================================================== */
+.pre-footer {
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 40px 20px;
+}
+
+.pre-footer-cont {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f1f5f9;
+}
+
+.info-card-icono {
+    background-color: rgba(59, 107, 154, 0.1);
+    color: var(--color-principal);
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-card-texto h3 {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--color-textos);
+    margin-bottom: 4px;
+}
+
+.info-card-texto p {
+    font-size: 0.85em;
+    color: var(--color-textos-secundarios);
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   FOOTER PRINCIPAL
+   ========================================================================== */
+.footer-principal {
+    background-color: #0f172a; /* Fondo oscuro elegante */
+    color: #94a3b8;
+    padding: 60px 20px 20px 20px;
+}
+
+.contenedor-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    color: #ffffff;
+    font-size: 1.05em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Columna Branding */
+.footer-brand .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.4em;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.brand-desc {
+    font-size: 0.88em;
+    line-height: 1.6;
+}
+
+/* Lista de Contacto */
+.lista-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lista-contacto li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88em;
+}
+
+/* Lista de Enlaces */
+.lista-enlaces {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lista-enlaces a {
+    color: #94a3b8;
+    font-size: 0.88em;
+    transition: color 0.2s ease;
+}
+
+.lista-enlaces a:hover {
+    color: #ffffff;
+}
+
+/* Redes Sociales */
+.redes-sociales {
+    display: flex;
+    gap: 10px;
+}
+
+.social-btn {
+    width: 38px;
+    height: 38px;
+    background-color: #1e293b;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+    background-color: var(--color-principal);
+    transform: translateY(-2px);
+}
+
+/* Copyright */
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+/* Botón Flotante de WhatsApp */
+.btn-flotante-ws {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: #ffffff;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-flotante-ws:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+/* Adaptabilidad a Móviles */
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .btn-flotante-ws {
+        bottom: 15px;
+        right: 15px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* ==========================================================================
+   6. PANEL DE ADMINISTRACIÓN - ESTRUCTURA GENERAL
+   ========================================================================== */
+.admin-contenedor {
+    display: grid;
+    grid-template-columns: 15vw auto;
+    grid-template-rows: 10vh 90vh;
+    height: 100vh;
+    width: 100vw;
+}
+
+.barra_superior {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    box-shadow: 0 1px 4px #afafaf;
+    background-color: #ffffff;
+    z-index: 10;
+    display: flex;
+    align-items: center; 
+}
+
+.barra_superior h2 {
+    padding-left: 10px;
+    font-size: 1.6em;
+    color: var(--color-textos);
+    cursor: pointer;
+}
+
+.barra_superior a {
+    color: var(--color-textos);
+}
+
+.barra_superior a:hover {
+    color: var(--color-principal);
+}
+
+.modulo_contenedor {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    box-shadow: 1px 0 4px #afafaf;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 0 0 0;
+    overflow: auto;
+    z-index: 10;
+}
+
+.logo_cont {
+    text-align: center;
+}
+
+.modulo_contenedor .logo {
+    color: var(--color-principal);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.modulos {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.modulos ul {
+    margin: 5px 0;
+    padding-left: 0;
+}
+
+.select {
+    color: #fff;
+    background-color: var(--color-principal);
+}
+
+.sub-modulos {
+    display: none;
+}
+
+.modulos li {
+    padding: 10px;
+    margin: 10px;
+    border: solid 1px var(--color-principal);
+    cursor: pointer;
+    border-radius: 4px; 
+}
+
+.modulo:hover {
+    color: var(--color-principal);
+    background-color: #f0f4f8;
+}
+
+.contenido_contenedor {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    background-color: var(--fondo); 
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: calc(8vh + 40px);
+}
+
+
+/* ==========================================================================
+   7. PANEL DE ADMINISTRACIÓN - FORMULARIOS Y GESTIÓN
+   ========================================================================== */
+.formulario-principal {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.formulario-cont {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; 
+}
+
+.formulario-cont label {
+    font-weight: 600;
+    color: var(--color-textos);
+    font-size: 1.05em;
+}
+
+.formulario-cont input,
+.formulario-cont select {
+    height: 48px;
+    font-size: 1em;
+    font-weight: bolder;
+    padding: 10px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px; 
+    color: var(--color-textos);
+    background-color: var(--fondo);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.formulario-cont input:focus,
+.formulario-cont select:focus {
+    outline: none;
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 3px rgba(59, 107, 154, 0.2);
+}
+
+.formulario-cont select {
+    cursor: pointer;
+}
+
+.formulario-cont-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Área de subida de imagen */
+.cont-img {
+    width: 350px;     
+    height: 390px;   
+    flex-grow: 0;       
+    margin: 0 auto;
+    border: 3px dashed var(--color-principal);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-principal);
+    background-color: #f4f7fb;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.cont-img:hover {
+    background-color: #e5ebf4;
+    border-color: var(--acento-secundarios);
+}
+
+.cont-img h2 {
+    font-size: 2.5em;
+    margin: 0;
+    pointer-events: none; 
+}
+
+#vista-previa {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boton-cont {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.formulario-principal button {
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 12px 60px;
+    border: none;
+    color: #fff;
+    background-color: var(--color-principal);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.formulario-principal button:hover {
+    background-color: var(--acento-secundarios);
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
+}
+
+
+/* ==========================================================================
+   8. PANEL DE ADMINISTRACIÓN - MÓDULO LISTADO Y TARJETAS
+   ========================================================================== */
+.barra-acciones {
+    height: 12%; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px; 
+}
+
+.barra-acciones h3 {
+    color: var(--color-textos);
+}
+
+.btn-publicar {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-publicar:hover {
+    background-color: var(--acento-secundarios);
+}
+
+.buscador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 0 2px #aeaeae;
+    border-radius: 5px;
+}
+
+.buscador input {
+    padding: 10px 15px;
+    border: 1px solid #d1d1d1;
+    border-radius: 6px; 
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.buscador input:focus {
+    outline: none;
+    border-color: var(--color-principal);
+}
+
+.panel-contenedor {
+    height: 88%;
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+    padding: 0 30px 20px 30px; 
+    overflow-y: auto; 
+}
+
+.tarjeta-producto {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 15px 25px;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(59, 107, 154, 0.15);
+}
+
+.tarjeta-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 15%;
+}
+
+.badge-categoria {
+    background-color: var(--color-ambar);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85em;
+    text-align: center;
+    width: fit-content;
+}
+
+.tarjeta-body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    width: 60%; 
+}
+
+.nombre-producto {
+    margin: 0;
+    color: var(--color-textos);
+    font-size: 1.25em;
+    width: 40%; 
+}
+
+.precio-producto {
+    margin: 0;
+    color: var(--color-textos);
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.tarjeta-footer {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-detalles {
+    background-color: var(--color-principal);
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-detalles:hover {
+    background-color: var(--acento-secundarios);
+}
+
+
+/* ==========================================================================
+   9. PANEL DE ADMINISTRACIÓN - MODAL DE DETALLES
+   ========================================================================== */
+.modal-cont {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    background-color: #fff;
+    width: 75%;
+    max-width: 900px;
+    height: 65vh;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    padding: 40px;
+    animation: aparecer 0.3s ease-out; 
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.95) translateY(-20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.btn-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 2em;
+    color: #94a3b8;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.btn-cerrar:hover {
+    color: #e74c3c;
+}
+
+.modal-cuerpo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 40px;
+}
+
+.modal-img {
+    width: 50%;
+    height: 90%;
+    border: 3px dashed var(--color-principal); 
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    color: var(--color-principal);
+    background-color: #f4f7fb;
+}
+
+.modal-img h2 { 
+    margin: 0; 
+}
+
+.modal-detalles {
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn-modificar {
+    display: block;
+    text-align: center;
+    background-color: #4a7fa1;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-modificar:hover {
+    background-color: rgb(51, 136, 230);
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================================
+   10. MEDIA QUERIES (ADAPTABILIDAD A DISPOSITIVOS MÓVILES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .btn-scroll {
+        display: none;
+    }
+
+    .header-cont {
+        display: grid;
+        grid-template-columns: auto; 
+        gap: 15px 10px; 
+        padding: 10px 5px;
+    }
+
+    .cont-logo {
+        grid-column: 1 / 3;
+        width: 95%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .cont-buscador {
+        grid-column: 1 / 3;
+        width: 95%;
+        margin: auto; 
+    }
+
+    .cont-buscador input {
+        width: 100%; 
+    }
+
+    nav {
+        grid-column: 1 / 3; 
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .categorias {
+        display: flex;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        width: max-content; 
+        gap: 5px;
+    }
+
+    .categorias li {
+        flex-shrink: 0; 
+    }
+
+    .categorias a {
+        font-size: 0.85em;
+        padding: 10px 5px;
+    }
+    
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .pre-footer {
+        display: flex;
+        flex-direction: column; 
+        gap: 20px;
+        padding: 40px 30px;
+        margin-top: 40px;
+    }
+
+    .info-box {
+        margin: 0;
+        padding: 10px;
+    }
+
+    footer .contenedor {
+        padding: 60px 20px 10px;
+    }
+
+    .footer_contenido {
+        display: flex;
+        flex-direction: column; 
+        gap: 30px;
+        padding: 0; 
+    }
+
+    .footer_contenido h3 {
+        font-size: 0.8em;
+    }
+
+    .footer_info {
+        text-align: center; 
+    }
+
+    .footer_info ul {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer_info li {
+        font-size: 0.9em;
+    }
+
+    .contactos {
+        display: none; 
+    }
+
+    .copyright {
+        font-size: 12px;
+    }
+}
