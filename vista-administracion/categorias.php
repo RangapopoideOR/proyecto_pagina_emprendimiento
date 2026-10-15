@@ -56,11 +56,11 @@
 
                 <div class="tarjeta-categoria">
                     <div class="tarjeta-categoria-header">
-                        <h3 class="nombre-producto">Categoría 1</h3>
+                        <h3 class="nombre-producto">Categoría</h3>
                     </div>
                     
                     <div class="tarjeta-categoria-body">
-                        <p class="precio-producto">Productos en esta sección : 6</p>
+                        <p class="precio-producto">Productos: 6</p>
                     </div>
 
                     <div class="tarjeta-categoria-footer">
@@ -70,11 +70,11 @@
 
                 <div class="tarjeta-categoria">
                     <div class="tarjeta-categoria-header">
-                        <h3 class="nombre-producto">Categoría 2</h3>
+                        <h3 class="nombre-producto">Categoría</h3>
                     </div>
                     
                     <div class="tarjeta-categoria-body">
-                        <p class="precio-producto">Productos en esta sección : 6</p>
+                        <p class="precio-producto">Productos: 6</p>
                     </div>
 
                     <div class="tarjeta-categoria-footer">
