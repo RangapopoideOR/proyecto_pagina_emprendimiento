@@ -12,6 +12,7 @@
 
         <!-- Barra Superior -->
         <div class="barra_superior">
+            <button class="btn-menu-hamburguesa" onclick="toggleMenu()">☰</button>
             <h2>ofertas</h2>
         </div>
         
@@ -78,5 +79,6 @@
         
     </div>
 
+    <script src="funciones-admin.js"></script>
 </body>
 </html>

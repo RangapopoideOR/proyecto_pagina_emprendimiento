@@ -12,6 +12,7 @@
 
         <!-- Barra Superior -->
         <div class="barra_superior">
+            <button class="btn-menu-hamburguesa" onclick="toggleMenu()">☰</button>
             <h2>catálogo</h2>
         </div>
         
@@ -175,5 +176,6 @@
         }
     }
 </script>
+ <script src="funciones-admin.js"></script>
 </body>
 </html>

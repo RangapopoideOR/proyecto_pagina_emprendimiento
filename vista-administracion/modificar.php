@@ -12,6 +12,7 @@
 
         <!-- Barra Superior -->
         <div class="barra_superior">
+            <button class="btn-menu-hamburguesa" onclick="toggleMenu()">☰</button>
             <h2><a href="catalogo.php">catálogo</a> > modificar</h2>
         </div>
         
