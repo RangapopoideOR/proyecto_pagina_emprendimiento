@@ -183,16 +183,16 @@ $contador++;
         }
     }
 
-    if($total>=1 && $pagina<=$Npaginas){
-        $tabla.='<p class="has-text-right">Mostrando productos <strong>'.$pag_inicio.'</strong> al <strong>'.$pag_final.'</strong> de un <strong>total de '.$total.'</strong></p>';
-    }
+    // if($total>=1 && $pagina<=$Npaginas){
+    //     $tabla.='<p class="has-text-right">Mostrando productos <strong>'.$pag_inicio.'</strong> al <strong>'.$pag_final.'</strong> de un <strong>total de '.$total.'</strong></p>';
+    // }
 
-    $conexion=null;
-    echo $tabla;
+    // $conexion=null;
+    // echo $tabla;
 
-    if($total>=1 && $pagina<=$Npaginas){
-        echo paginador_tablas($pagina,$Npaginas,$url,7);
-    }
+    // if($total>=1 && $pagina<=$Npaginas){
+    //     echo paginador_tablas($pagina,$Npaginas,$url,7);
+    // }
 
 ?>
 
