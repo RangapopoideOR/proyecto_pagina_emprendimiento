@@ -153,29 +153,6 @@
         </div>
     </div>
 
-
-
-<script>
-    const modal = document.getElementById("modal-producto");
-
-    // Función para mostrar el modal
-    function abrirModal(evento) {
-        evento.preventDefault(); // Evita que la página salte al inicio por el href="#"
-        modal.style.display = "flex";
-    }
-
-    // Función para ocultar el modal
-    function cerrarModal() {
-        modal.style.display = "none";
-    }
-
-    // Permite cerrar el modal haciendo clic en el fondo oscuro
-    window.onclick = function(evento) {
-        if (evento.target === modal) {
-            cerrarModal();
-        }
-    }
-</script>
  <script src="funciones-admin.js"></script>
 </body>
 </html>
