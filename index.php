@@ -10,15 +10,21 @@
 
 
     <main>
-        <section class="hero">
-            <div class="img-hero">
-
+       <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Encuentra la mejor calidad en nuestro catálogo</h1>
+                <p class="hero-subtitle">
+                Descubre nuestra amplia selección de productos diseñados especialmente para ti.
+                </p>
+                <div class="hero-buttons">
+                <a href="#catalogo" class="btn btn-primary">Ver catálogo</a>
+                </div>
             </div>
         </section>
 
         <section>
             <div class="contenido-seccion">
-                <div class="seccion-titulo">
+                <div class="seccion-titulo" id="catalogo">
                     <h2>Sombreros</h2>
                 </div>
 

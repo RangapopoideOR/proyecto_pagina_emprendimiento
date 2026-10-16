@@ -73,9 +73,8 @@
             <div class="footer-col">
                 <h3>Información</h3>
                 <ul class="lista-enlaces">
-                    <li><a href="nosotros.php">Sobre nosotros</a></li>
-                    <li><a href="#">¿Cómo pedir?</a></li>
-                    <li><a href="#">Ubicación física</a></li>
+                    <li><a href="sobrenosotros.php">Sobre nosotros</a></li>
+                    <li><a href="comocomprar.php">¿Cómo pedir?</a></li>
                 </ul>
             </div>
 

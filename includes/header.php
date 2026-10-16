@@ -10,11 +10,24 @@
 
         <!-- 2. Menú de Navegación con Efecto Flotante -->
         <nav class="nav-principal">
+            <?php
+            // Obtiene el nombre del archivo PHP actual (ej. 'index.php', 'catalogo.php', etc.)
+            $pagina_actual = basename($_SERVER['PHP_SELF']);
+            ?>
+
             <ul class="menu-navegacion">
-                <li><a href="index.php" class="activo">Inicio</a></li>
-                <li><a href="catalogo.php">Catálogo</a></li>
-                <li><a href="nosotros.php">Nosotros</a></li>
-                <li><a href="contacto.php">Contáctenos</a></li>
+                <li>
+                    <a href="index.php" class="<?php echo ($pagina_actual == 'index.php') ? 'activo' : ''; ?>">Inicio</a>
+                </li>
+                <li>
+                    <a href="catalogo.php" class="<?php echo ($pagina_actual == 'catalogo.php') ? 'activo' : ''; ?>">Catálogo</a>
+                </li>
+                <li>
+                    <a href="sobrenosotros.php" class="<?php echo ($pagina_actual == 'sobrenosotros.php') ? 'activo' : ''; ?>">Nosotros</a>
+                </li>
+                <li>
+                    <a href="contacto.php" class="<?php echo ($pagina_actual == 'contacto.php') ? 'activo' : ''; ?>">Contáctenos</a>
+                </li>
             </ul>
         </nav>
 
