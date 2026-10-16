@@ -55,9 +55,9 @@ require_once('main.php');
             $_SESSION['usuario']=$check_user['usuario_usuario'];
 
             if(headers_sent()){
-				echo "<script> window.location.href='../vista-administracion/publicar-producto.php'; </script>";
+				echo "<script> window.location.href='../vista-administracion/inicio.php'; </script>";
 			}else{
-				header("Location: ../vista-administracion/publicar-producto.php");
+				header("Location: ../vista-administracion/inicio.php");
 			}
 
         }else{

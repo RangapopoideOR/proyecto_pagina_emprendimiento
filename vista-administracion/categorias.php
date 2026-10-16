@@ -38,6 +38,7 @@ try {
     <link rel="stylesheet" href="../CSS/CSS_AdminPanel.css">
 </head>
 <body>
+    <?php require_once dirname(__DIR__) . '/includes/acesso.php'; ?>
     <div class="contenedor">
 
         <!-- Barra Superior -->
@@ -60,6 +61,7 @@ try {
                 </ul>
                 <ul>
                     <li class="modulo">Administrar pagina</li>
+                    <li><a href="logout.php">cerrar sesion</a></li>
                 </ul>
             </div>
 

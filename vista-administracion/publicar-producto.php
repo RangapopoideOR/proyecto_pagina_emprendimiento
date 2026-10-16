@@ -8,29 +8,16 @@
 </head>
 <body>
 
-<?php
-
-session_start();
-
-// 1. Cabeceras anti-caché para bloquear el botón "Atrás" después de cerrar sesión
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-
-// 2. Validación de seguridad de la sesión
-if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] == "") {
-    header("Location: login.php");
-    exit();
-}
-
-?>
+<?php require_once dirname(__DIR__) . '/includes/acesso.php'; ?>
     <?php require_once('../php/main.php'); ?>
 
     <div class="contenedor">
 
-        <!-- Barra Superior -->
+
+    <!-- Barra Superior -->
         <div class="barra_superior">
-            <h2><a href="catalogo.php">catálogo</a> > publicar</h2>
+            <button class="btn-menu-hamburguesa" onclick="toggleMenu()">☰</button>
+            <h2>publicar producto</h2>
         </div>
         
         <!-- Panel Izquierdo -->
@@ -41,19 +28,19 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] == "") {
             
             <div class="modulos">
                 <ul>
-                    <li class="select">catálogo</li>
-                    
-                    <a href="categorias.php"><li class="modulo">categorias</li></a>
-                    
+                    <a href="catalogo.php"><li class="modulo">catálogo</li></a>
+                    <li class="select">categorias</li>
                     <a href="ofertas.php"><li class="modulo">ofertas</li></a>
                 </ul>
                 <ul>
                     <li class="modulo">Administrar pagina</li>
+                    <li><a href="logout.php">cerrar sesion</a></li>
                 </ul>
             </div>
-            
+
         </div>
-        <?php include('../includes/panelAdmin.php');?>
+
+        
         
       
         <div class="contenido_contenedor">
@@ -139,5 +126,6 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] == "") {
     </script>
 
     <script src="../js/ajax.js"></script>
+    <script src="funciones-admin.js"></script>
 </body>
 </html>
