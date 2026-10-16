@@ -58,6 +58,7 @@ try {
                     <a href="catalogo.php"><li class="modulo">catálogo</li></a>
                     <li class="select">categorias</li>
                     <a href="ofertas.php"><li class="modulo">ofertas</li></a>
+                    <a href="configuracion.php"><li class="modulo">ofertas</li></a>
                 </ul>
                 <ul>
                     <li class="modulo">Administrar pagina</li>

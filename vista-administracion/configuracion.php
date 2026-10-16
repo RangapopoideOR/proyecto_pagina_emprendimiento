@@ -10,6 +10,11 @@
 <body>
 <?php require_once dirname(__DIR__) . '/includes/acesso.php'; ?>
     <div class="contenedor">
+        <div class="barra_superior">
+            <button class="btn-menu-hamburguesa" onclick="toggleMenu()">☰</button>
+            <h2>catálogo</h2>
+        </div>
+        
 
         <!-- Barra Superior -->
         <div class="barra_superior">
@@ -106,6 +111,6 @@
                     <i class="fa-solid fa-floppy-disk"></i> Guardar Configuración
                 </button>
             </div>
-
+ <script src="funciones-admin.js"></script>
         </div>
         
