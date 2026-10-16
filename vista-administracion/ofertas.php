@@ -30,7 +30,8 @@
                     <a href="categorias.php"><li class="modulo">categorias</li></a>
 
                     <li class="select">ofertas</li>
-                    <a href="configuracion.php"><li class="modulo">ofertas</li></a>
+                    <a href="configuracion.php"><li class="modulo">configuracion</li></a>
+                    
                 </ul>
                 <ul>
                     <li class="modulo">Administrar pagina</li>
