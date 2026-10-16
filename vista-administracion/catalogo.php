@@ -36,6 +36,7 @@
             </div>
 
         </div>
+        <?php include('../includes/panelAdmin.php');?>
         
         <!-- Contenido Principal -->
         <div class="contenido_contenedor">
