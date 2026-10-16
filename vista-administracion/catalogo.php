@@ -31,6 +31,7 @@
                     
                     <a href="ofertas.php"><li class="modulo">ofertas</li></a>
                     <a href="configuracion.php"><li class="modulo">ofertas</li></a>
+                    <a href="usuarios.php"><li class="modulo">usuarios</li></a>
                 </ul>
                 <ul>
                     <li class="modulo">Administrar pagina</li>
